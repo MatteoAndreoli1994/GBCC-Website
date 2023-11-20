@@ -1,0 +1,15 @@
+.navbar.fixed {
+
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.2s ease;
+}
+
+
+
+.navbar.logo {
+
+    visibility: hidden;
+    opacity: 0;
+    
+}

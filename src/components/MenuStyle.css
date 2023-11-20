@@ -1,0 +1,205 @@
+/* 
+==================
+==================
+Global 
+==================
+==================
+*/
+
+/* Reset */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+  --c-bg: #E8EAF6; /* Background. */
+  --c-txt: #9FA8DA; /* Font. */
+  --c-i: #7E57C2; /* Icon. */
+  --c-btn: #FFF176; /* Button. */
+}
+
+/* Document */
+@media screen and (min-width:920px){
+  .nav-part {
+    bottom: auto;
+    top: 1em;
+    right: 1em;
+  }       
+}
+
+
+
+
+
+
+
+
+/* 
+==================
+==================
+Nav 
+==================
+==================
+*/
+
+/* Nav container */
+.main-nav {
+  display: flex;
+
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 100;
+  /* Size reference */
+
+  font-size: 1rem;
+}
+
+.nav-part {
+  display: flex;
+  margin-left: .5rem;
+  background: #FFFFFF;
+  border-radius: 3.4em;
+  
+}
+
+/* Nav buttons 1 */
+.nav-buttons {
+  display: flex;
+  margin: 0;
+  padding: .2em;
+  background: #FFFFFF;
+  border-radius: 3.4em;
+  -webkit-box-shadow: 0 .1em .3em rgba(0,0,0,.1);
+  box-shadow: 0 .1em .3em rgba(0,0,0,.1); 
+
+  /*z-index: 1;*/
+}
+
+.nav-buttons li {
+  margin: .2em;
+  list-style: none;
+  
+}
+
+.nav-buttons li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.6em;
+  height: 2.6em;
+  background: #FFFFFF;
+  border-radius: 50%;
+
+  
+}
+
+.nav-buttons li a:hover {
+  background: var(--c-btn);
+  -webkit-box-shadow: 0 .1em .3em rgba(0,0,0,.25);
+  box-shadow: 0 .1em .3em rgba(0,0,0,.25);
+
+}
+
+.nav-buttons li a:active {
+  -webkit-transform: scale(.95);
+  transform: scale(.95);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  
+}
+/* Nav buttons 2 */
+.nav-buttons2 {
+  display: flex;
+  margin: 0;
+  padding: .2em;
+  background: #ffffff;
+  width: 13em;
+  border-radius: 3.4em;
+  -webkit-box-shadow: 0 .1em .3em rgba(0,0,0,.1);
+  box-shadow: 0 .1em .3em rgba(0,0,0,.1); 
+  position: absolute;
+  margin-left:1em;
+  margin-top:-1.7em;
+  pointer-events: none;
+
+
+
+  /*z-index: 1;*/
+}
+
+
+.nav-buttons2 li {
+  margin: .2em;
+  list-style: none;
+  
+}
+
+.nav-buttons2 li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12em;
+  height: 2.6em;
+  background: #ffffff;
+  border-radius: 3.4em;
+  
+}
+
+.nav-buttons2 li a:hover {
+  background: var(--c-btn);
+  -webkit-box-shadow: 0 .1em .3em rgba(0,0,0,.25);
+  box-shadow: 0 .1em .3em rgba(0,0,0,.25);
+  
+}
+
+.nav-buttons2 li a:active {
+  -webkit-transform: scale(.95);
+  transform: scale(.95);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  
+}
+/* Icons */
+.nav-icon {
+  fill: var(--c-i);
+}
+
+.nav-buttons li a:hover .nav-icon {
+  fill: #FFFFFF;
+}
+
+/* Nav info */
+.nav-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Hidden by default */
+  width: 0;
+  opacity: 0;
+  transition: 
+  width .2s ease-in-out 0s, 
+  opacity .2s ease-in-out 0s;
+}
+
+.nav-info > span {
+  padding: .2em .8em;
+  pointer-events: none;
+  -webkit-transform: translateX(.725rem);
+  transform: translateX(.725rem);
+  transition: transform 1.2s ease;
+  pointer-events: none;
+}
+
+/* Desktop */
+@media screen and (min-width:920px){
+  .nav-part {
+    bottom: auto;
+    top: 1em;
+    right: 1em;
+  }       
+}
