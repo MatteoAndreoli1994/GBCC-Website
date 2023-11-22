@@ -153,7 +153,7 @@ font-size: 20px;
 }
 
 @media (max-width: 48em){
-font-size: 18px;
+font-size: 15px;
 
 }
 
@@ -181,7 +181,7 @@ transition: all 0.2s ease;
 position: relative;
 box-shadow: 0 0 10px rgba(0,0,0,0.1);
 margin:10px;
-background-color:#7D1D3F;
+background-color:#5700EF;
 &:hover{
 transform: scale(1.05);
 box-shadow: 0 0 20px rgba(0,0,0,0.4);
@@ -189,8 +189,8 @@ box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
 
 @media (max-width: 40em){
-display: none;
 
+  padding: 0.5rem 0.7rem;
 }
 `
 const SubTitle = styled.h1`
@@ -588,7 +588,7 @@ const Roadmap = () => {
             <SubText>Each GBCC comes with a special trait, the “Level”. The Level is a fundamental part of this project and our staking system.
             Even common GBCC can become great by levelling:
             It will affect both Gambero and Game Boyz Room, giving the possibility to receive some privileges with the achievement of certain levels. 
-
+              <DivBtn2><Btn2><Title3>APP</Title3></Btn2></DivBtn2>
             </SubText>
 
           </Levelling>

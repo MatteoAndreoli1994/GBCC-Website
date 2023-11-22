@@ -493,8 +493,8 @@ const LevelDiv = styled.div`
 position: absolute;
 top: 5%;
 right: 5%;
-width: 15%;
-height: 15%;
+width: 20%;
+height: 20%;
 background-color: rgba(0, 0, 0, 0.7);
 color: white;
 border-radius: 5px;
@@ -510,8 +510,8 @@ z-index: 2; /* Aggiungi uno z-index inferiore al div del livello */
 @media (max-width: 40em){
   top: 5%;
   right: 5%;
-  width: 15%;
-  height: 15%;
+  width: 30%;
+  height: 30%;
 }
 
 `;
