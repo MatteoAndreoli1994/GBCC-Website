@@ -639,7 +639,7 @@ justify-content: left;
 background: rgba(255,255,255,0.7);
 
 @media (max-width: 80em){
-width:85%;
+width:90%;
 }
 
 
