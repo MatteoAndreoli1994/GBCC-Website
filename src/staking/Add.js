@@ -768,14 +768,14 @@ box-shadow: none;
 @media (max-width: 40em){
 
 margin:1%;
-font-size: 11px;
+font-size: 9px;
 
-padding: 7px 14px;
+padding: 6px 12px;
 border-radius: 30px;
 }
 
 @media (max-width: 30em){
-font-size: 9px;
+font-size: 8px;
 margin:1%;
 }
 
