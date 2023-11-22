@@ -677,6 +677,9 @@ font-size: 12px;
 }
 
 `
+const ParagrafoGrossetto = styled.p`
+font-weight: bold;
+`
 const ImmagineMetadati = styled.div`
 
 flex-direction:row;
@@ -1725,7 +1728,7 @@ async function infoGBCC(id){
               <InfoNft>
                 <h4>{GBCCID} <br></br> </h4>
                 
-                <p>Background: {BACKGROUND}<br></br> </p>
+                <p><ParagrafoGrossetto>Background:</ParagrafoGrossetto> {BACKGROUND}<br></br> </p>
                 <p>Body: {BODY}<br></br></p>
                 <p>Body Detail: {BODYDETAIL}<br></br></p>
                 <p>Face: {FACE}<br></br> </p>
