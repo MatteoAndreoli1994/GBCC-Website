@@ -639,7 +639,7 @@ justify-content: left;
 background: rgba(255,255,255,0.7);
 
 @media (max-width: 80em){
-width:75%;
+width:85%;
 }
 
 
@@ -651,11 +651,11 @@ margin-bottom: 1rem;
 text-align: left;
 
 @media (max-width: 80em){
-font-size: 20px;
+font-size: 18px;
 }
 
 @media (max-width: 40em){
-font-size: 18px;
+font-size: 14px;
 }
 
 }
@@ -668,11 +668,11 @@ text-align: left;
 color: #555;
 
 @media (max-width: 80em){
-font-size: 16px;
+font-size: 14px;
 }
 
 @media (max-width: 40em){
-font-size: 14px;
+font-size: 12px;
 }
 }
 
