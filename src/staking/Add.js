@@ -735,6 +735,53 @@ margin:1%;
 
 
 `
+
+const BottoneStake2 = styled.button`
+
+margin:1rem;
+display: inline-block;
+padding: 10px 20px;
+border-radius: 30px;
+
+font-size: 16px;
+font-weight: 900;
+text-align: center;
+text-transform: uppercase;
+color: #fff;
+background-color: #C850C0;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+transition: all 0.3s ease;
+cursor: pointer;
+
+font-weight: 900;
+
+&:hover {
+background-color: #4158D0;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+&:active {
+background-color: white;
+box-shadow: none;
+}
+
+@media (max-width: 40em){
+
+margin:1%;
+font-size: 11px;
+
+padding: 7px 14px;
+border-radius: 30px;
+}
+
+@media (max-width: 30em){
+font-size: 9px;
+margin:1%;
+}
+
+
+`
+
 const ListBox = styled.select`
 width: 100%;
 height:35px;
@@ -1701,19 +1748,19 @@ async function infoGBCC(id){
               {isApproved ? (
                 <>
 
-                <BottoneStake   onClick={() => selectedNumber && GBCCs.includes(selectedNumber) ? HandleStakeRefresh() : HandleUnStakeRefresh()}>
+                <BottoneStake2   onClick={() => selectedNumber && GBCCs.includes(selectedNumber) ? HandleStakeRefresh() : HandleUnStakeRefresh()}>
                 {selectedNumber && GBCCs.includes(selectedNumber) ? 'Stake' : 'Unstake'}
 
                 
-                </BottoneStake>
+                </BottoneStake2>
                 
 
                 </>  
               ) :
               ( 
-                <BottoneStake onClick={() => selectedNumber && GBCCs.includes(selectedNumber) ? handleApproveAndStake() : handleApproveAndStake()}>
+                <BottoneStake2 onClick={() => selectedNumber && GBCCs.includes(selectedNumber) ? handleApproveAndStake() : handleApproveAndStake()}>
                 {selectedNumber && GBCCs.includes(selectedNumber) ? 'Approve' : 'Approve'}
-                </BottoneStake>
+                </BottoneStake2>
               
               )
             } 
