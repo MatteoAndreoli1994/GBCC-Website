@@ -1736,10 +1736,10 @@ async function infoGBCC(id){
                 <p><strong>Head Detail: </strong>{HEADDETAIL}<br></br> </p>
                 <p><strong>Hand Detail: </strong>{HANDDETAIL}</p>
                 
-                <p>{`Level: ${LIVELLO}${String.fromCharCode(160)}`}
+                <p><strong>Level: </strong>{`${LIVELLO}${String.fromCharCode(160)}`}
                 
                 {`(${PERCENTUALELIVELLO}%)`}</p>
-                <p>Exp: {EXPPROPORZIONATO}/{EXPNEXTLEVEL}</p>
+                <p><strong>Exp: </strong>{EXPPROPORZIONATO}/{EXPNEXTLEVEL}</p>
 
                 
               
@@ -1842,10 +1842,10 @@ async function infoGBCC(id){
                 <p><strong>Hand Detail: </strong>{HANDDETAIL}</p>
                 
                 
-                <p>{`Level: ${LIVELLO}${String.fromCharCode(160)}`}
+                <p><strong>Level: </strong>{`${LIVELLO}${String.fromCharCode(160)}`}
                 
                 {`(${PERCENTUALELIVELLO}%)`}</p>
-                <p>Exp: {EXPPROPORZIONATO}/{EXPNEXTLEVEL}</p>
+                <p><strong>Exp: </strong>{EXPPROPORZIONATO}/{EXPNEXTLEVEL}</p>
 
                 
               
