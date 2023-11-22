@@ -1748,19 +1748,19 @@ async function infoGBCC(id){
               {isApproved ? (
                 <>
 
-                <BottoneStake2   onClick={() => selectedNumber && GBCCs.includes(selectedNumber) ? HandleStakeRefresh() : HandleUnStakeRefresh()}>
+                <BottoneStake   onClick={() => selectedNumber && GBCCs.includes(selectedNumber) ? HandleStakeRefresh() : HandleUnStakeRefresh()}>
                 {selectedNumber && GBCCs.includes(selectedNumber) ? 'Stake' : 'Unstake'}
 
                 
-                </BottoneStake2>
+                </BottoneStake>
                 
 
                 </>  
               ) :
               ( 
-                <BottoneStake2 onClick={() => selectedNumber && GBCCs.includes(selectedNumber) ? handleApproveAndStake() : handleApproveAndStake()}>
+                <BottoneStake onClick={() => selectedNumber && GBCCs.includes(selectedNumber) ? handleApproveAndStake() : handleApproveAndStake()}>
                 {selectedNumber && GBCCs.includes(selectedNumber) ? 'Approve' : 'Approve'}
-                </BottoneStake2>
+                </BottoneStake>
               
               )
             } 
@@ -1915,13 +1915,13 @@ async function infoGBCC(id){
                   {isSuccess || isApproved ? (
                     <>
 
-                    <BottoneStake onClick={() => handleUnstakeAllRefresh()}>
+                    <BottoneStake2 onClick={() => handleUnstakeAllRefresh()}>
                       Unstake All
-                    </BottoneStake>
+                    </BottoneStake2>
 
-                    <BottoneStake onClick={() => handleAUnstakeSelectedRefresh()}>
+                    <BottoneStake2 onClick={() => handleAUnstakeSelectedRefresh()}>
                     Unstake Selected ({selectedImages.length})
-                    </BottoneStake>
+                    </BottoneStake2>
                     
 
                     </>  
