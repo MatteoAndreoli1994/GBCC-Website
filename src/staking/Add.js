@@ -652,6 +652,7 @@ text-align: left;
 
 @media (max-width: 80em){
 font-size: 18px;
+margin-bottom: 0.5rem;
 }
 
 @media (max-width: 40em){
