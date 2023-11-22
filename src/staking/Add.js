@@ -1730,11 +1730,11 @@ async function infoGBCC(id){
                 <h4>{GBCCID} <br></br> </h4>
                 
                 <p><strong>Background: </strong>{BACKGROUND}<br></br> </p>
-                <p><strong>Body: {BODY}</strong><br></br></p>
-                <p><strong>Body Detail: {BODYDETAIL}</strong><br></br></p>
-                <p><strong>Face: {FACE}</strong><br></br> </p>
-                <p><strong>Head Detail: {HEADDETAIL}</strong><br></br> </p>
-                <p><strong>Hand Detail: {HANDDETAIL}</strong></p>
+                <p><strong>Body: </strong>{BODY}<br></br></p>
+                <p><strong>Body Detail: </strong>{BODYDETAIL}<br></br></p>
+                <p><strong>Face: </strong>{FACE}<br></br> </p>
+                <p><strong>Head Detail: </strong>{HEADDETAIL}<br></br> </p>
+                <p><strong>Hand Detail: </strong>{HANDDETAIL}</p>
                 
                 <p>{`Level: ${LIVELLO}${String.fromCharCode(160)}`}
                 
@@ -1835,11 +1835,12 @@ async function infoGBCC(id){
                 <h4>{GBCCID} <br></br> </h4>
                 
                 <p><strong>Background: </strong>{BACKGROUND}<br></br> </p>
-                <p><strong>Body: {BODY}</strong><br></br></p>
-                <p><strong>Body Detail: {BODYDETAIL}</strong><br></br></p>
-                <p><strong>Face: {FACE}</strong><br></br> </p>
-                <p><strong>Head Detail: {HEADDETAIL}</strong><br></br> </p>
-                <p><strong>Hand Detail: {HANDDETAIL}</strong></p>
+                <p><strong>Body: </strong>{BODY}<br></br></p>
+                <p><strong>Body Detail: </strong>{BODYDETAIL}<br></br></p>
+                <p><strong>Face: </strong>{FACE}<br></br> </p>
+                <p><strong>Head Detail: </strong>{HEADDETAIL}<br></br> </p>
+                <p><strong>Hand Detail: </strong>{HANDDETAIL}</p>
+                
                 
                 <p>{`Level: ${LIVELLO}${String.fromCharCode(160)}`}
                 
