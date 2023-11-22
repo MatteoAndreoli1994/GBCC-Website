@@ -1728,12 +1728,12 @@ async function infoGBCC(id){
               <InfoNft>
                 <h4>{GBCCID} <br></br> </h4>
                 
-                <p>Background:{BACKGROUND}<br></br> </p>
-                <p>Body: {BODY}<br></br></p>
-                <p>Body Detail: {BODYDETAIL}<br></br></p>
-                <p>Face: {FACE}<br></br> </p>
-                <p>Head Detail: {HEADDETAIL}<br></br> </p>
-                <p>Hand Detail: {HANDDETAIL}</p>
+                <p><strong>Background: </strong>{BACKGROUND}<br></br> </p>
+                <p><strong>Body: {BODY}</strong><br></br></p>
+                <p><strong>Body Detail: {BODYDETAIL}</strong><br></br></p>
+                <p><strong>Face: {FACE}</strong><br></br> </p>
+                <p><strong>Head Detail: {HEADDETAIL}</strong><br></br> </p>
+                <p><strong>Hand Detail: {HANDDETAIL}</strong></p>
                 
                 <p>{`Level: ${LIVELLO}${String.fromCharCode(160)}`}
                 
@@ -1834,11 +1834,11 @@ async function infoGBCC(id){
                 <h4>{GBCCID} <br></br> </h4>
                 
                 <p><strong>Background: </strong>{BACKGROUND}<br></br> </p>
-                <p>Body: {BODY}<br></br></p>
-                <p>Body Detail: {BODYDETAIL}<br></br></p>
-                <p>Face: {FACE}<br></br> </p>
-                <p>Head Detail: {HEADDETAIL}<br></br> </p>
-                <p>Hand Detail: {HANDDETAIL}</p>
+                <p><strong>Body: {BODY}</strong><br></br></p>
+                <p><strong>Body Detail: {BODYDETAIL}</strong><br></br></p>
+                <p><strong>Face: {FACE}</strong><br></br> </p>
+                <p><strong>Head Detail: {HEADDETAIL}</strong><br></br> </p>
+                <p><strong>Hand Detail: {HANDDETAIL}</strong></p>
                 
                 <p>{`Level: ${LIVELLO}${String.fromCharCode(160)}`}
                 
