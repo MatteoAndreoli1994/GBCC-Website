@@ -433,7 +433,9 @@ const warningAnimation = useSpring({
           
           <MenuItem onClick={()=> scrollTo('about')}>About</MenuItem>
           <MenuItem onClick={()=> scrollTo('roadmap')}>RoadMap</MenuItem>
-          <MenuItem><a href="https://www.gameboyzcolorclub.com/leveling">Leveling</a></MenuItem>
+
+         {/* <MenuItem><a href="https://www.gameboyzcolorclub.com/leveling">Leveling</a></MenuItem>*/}
+
           <MenuItem onClick={()=> scrollTo('mint')}>Mint</MenuItem>
           <MenuItem onClick={()=> scrollTo('team')}>Team</MenuItem>
           <MenuItem onClick={()=> scrollTo('faq')}>Faq</MenuItem>
