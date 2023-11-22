@@ -1728,7 +1728,7 @@ async function infoGBCC(id){
               <InfoNft>
                 <h4>{GBCCID} <br></br> </h4>
                 
-                <p><ParagrafoGrossetto>Background:</ParagrafoGrossetto> {BACKGROUND}<br></br> </p>
+                <p>Background:{BACKGROUND}<br></br> </p>
                 <p>Body: {BODY}<br></br></p>
                 <p>Body Detail: {BODYDETAIL}<br></br></p>
                 <p>Face: {FACE}<br></br> </p>
@@ -1833,7 +1833,7 @@ async function infoGBCC(id){
               <InfoNft>
                 <h4>{GBCCID} <br></br> </h4>
                 
-                <p>Background: {BACKGROUND}<br></br> </p>
+                <p><strong>Background: </strong>{BACKGROUND}<br></br> </p>
                 <p>Body: {BODY}<br></br></p>
                 <p>Body Detail: {BODYDETAIL}<br></br></p>
                 <p>Face: {FACE}<br></br> </p>
