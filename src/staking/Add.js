@@ -722,14 +722,14 @@ box-shadow: none;
 @media (max-width: 40em){
 
 margin:1%;
-font-size: 14px;
+font-size: 12px;
 
-padding: 10px 20px;
+padding: 8px 16px;
 border-radius: 30px;
 }
 
 @media (max-width: 30em){
-font-size: 10px;
+font-size: 9px;
 margin:1%;
 }
 
