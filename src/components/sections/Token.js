@@ -141,9 +141,11 @@ margin: 1.5rem auto;
 width: 80%;
 font-size: 56px;
 font-weight: 900;
+margin-to
 
 @media (max-width: 80em){
   font-size: 48px;
+
 
       }
 
@@ -153,6 +155,7 @@ font-weight: 900;
   font-size: 46px;
   margin-left: 0;
   margin: 1.5rem auto;
+
   br{
     display:none;
   }
@@ -223,15 +226,13 @@ margin: 1rem auto;
 }
 `
 const SubText2 = styled.p`
-
 line-height: 1.5;
-font-size: 20px;
-font-weight: 600;
+font-size: 24px;
+font-weight: 400;
 color: #5700EF;
 align-self: flex-start;
-width: 100%;
+width: 80%;
 margin: 1rem auto;
-
 
 
 
@@ -248,9 +249,9 @@ margin: 1rem auto;
 @media (max-width: 30em){
   width: 100%;
   text-align:center;
-  justify-content:center;
-  font-size: 10px;
-margin-top:2%;
+  font-size: 11px;
+
+  margin: 1 auto;
 }
 `
 const SubText3 = styled.p`
