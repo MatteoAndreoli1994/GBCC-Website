@@ -141,7 +141,7 @@ margin: 1.5rem auto;
 width: 80%;
 font-size: 56px;
 font-weight: 900;
-margin-to
+
 
 @media (max-width: 80em){
   font-size: 48px;
@@ -154,7 +154,7 @@ margin-to
   text-align:center;
   font-size: 46px;
   margin-left: 0;
-  margin: 1.5rem auto;
+  margin: 0rem auto;
 
   br{
     display:none;
@@ -165,7 +165,7 @@ margin-to
   width: 100%;
   text-align:center;
   font-size: 40px;
-  margin: 1rem auto;
+  margin: 2rem auto;
 }
 @media (max-width: 20em){
   br{
@@ -183,16 +183,21 @@ align-items:center;
 display:flex;
 
 
+
 @media (max-width: 64em){
-  margin-left:0%;
+  margin-top: 8%;
+
+
   justify-content:center;
   width: 100%;
-  margin-top: 10%;
+  margin-left:-2%;
+  
 }
 
 }
   @media (max-width: 30em){
     width: 100%;
+    margin-left:-2%;
 
   }
 `
