@@ -466,7 +466,7 @@ export const Token = () => {
       <Container>
       <UptextMobile>$GBCC TOKEN </UptextMobile> 
         <Box1>
-         <img src={LOGO} alt="LOGO" style={{ width: '100%', height: 'auto' }} />
+         <img src={LOGO} alt="LOGO" style={{ width: '80%', height: 'auto' }} />
         </Box1>
 
         <Box>
