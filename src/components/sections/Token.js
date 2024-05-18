@@ -68,12 +68,12 @@ justify-content:center;
 const Box1 = styled.div`
 width:50%;
 
-height:90vh;
+height:auto;
 display: flex;
 
 flex-direction: column;
 Justify-content: center;
-align-items: left;
+align-items: center;
 
 
 @media (max-width: 64em){
@@ -82,7 +82,7 @@ align-items: left;
   flex-direction: column;
   height: 70vh;
   width:100%;
-  justify-content:top;
+
   align-items: center;
 
 }
@@ -91,7 +91,7 @@ align-items: left;
   flex-direction: column;
 
   width:100%;
-  justify-content:top;
+
 
 }
 
@@ -225,12 +225,13 @@ margin: 1rem auto;
 const SubText2 = styled.p`
 
 line-height: 1.5;
-font-size: 24px;
+font-size: 20px;
 font-weight: 600;
 color: #5700EF;
 align-self: flex-start;
-width: 80%;
+width: 100%;
 margin: 1rem auto;
+
 
 
 
@@ -247,8 +248,9 @@ margin: 1rem auto;
 @media (max-width: 30em){
   width: 100%;
   text-align:center;
-  font-size: ${props => props.theme.fontsm};
-  margin: 0 auto;
+  justify-content:center;
+  font-size: 10px;
+margin-top:2%;
 }
 `
 const SubText3 = styled.p`
@@ -290,6 +292,7 @@ const Textbox = styled.div`
 @media (max-width: 64em){
 margin-bottom:1rem;
 justify-content:center;
+width: 90vw;
   
   }
 
@@ -466,7 +469,7 @@ export const Token = () => {
       <Container>
       <UptextMobile>$GBCC TOKEN </UptextMobile> 
         <Box1>
-         <img src={LOGO} alt="LOGO" style={{ width: '80%', height: 'auto' }} />
+         <img src={LOGO} alt="LOGO" style={{ width: '70%', height: 'auto' }} />
         </Box1>
 
         <Box>
@@ -478,8 +481,8 @@ export const Token = () => {
 <br></br>Users of GBCC NFTs and occasional traders and degens will benefit from this new release that combines the spirit of a MEME Coin with a utility currency!
             </SubText>
             <SubText2>              
-            <ThemeProvider theme={dark}>CA: 0x3580f19068a264548d6816bde5942693eed95dc1
-          </ThemeProvider>             
+           CA: 0x3580f19068a264548d6816bde5942693eed95dc1
+        
           </SubText2>
           <SubText3>              
           <LinkGitbook onClick={handleClick2}>          GITBOOK</LinkGitbook>
