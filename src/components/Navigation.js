@@ -430,7 +430,7 @@ const warningAnimation = useSpring({
         </HamburgerContainer>
 
         <Menu click={click}>
-          
+        <MenuItem onClick={()=> scrollTo('token')}>$GBCC</MenuItem>
           <MenuItem onClick={()=> scrollTo('about')}>About</MenuItem>
           <MenuItem onClick={()=> scrollTo('roadmap')}>RoadMap</MenuItem>
 

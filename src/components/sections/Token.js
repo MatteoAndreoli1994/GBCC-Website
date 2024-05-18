@@ -461,7 +461,7 @@ export const Token = () => {
 
   return (
     <div>
-    <Section id="about">
+    <Section id="token">
       
       <Container>
       <UptextMobile>$GBCC TOKEN </UptextMobile> 
