@@ -13,9 +13,11 @@ import { useAccount } from 'wagmi';
 import { ethers } from 'ethers';
 
 import WalletAbi from './../WalletAbi.json';
+import TokensContract from './../TokensContract.json';
 
 //inserimento
 const PaymentAddress = "0x9cAc83f10Be40C1038092c3c02892F33b396b386";
+const TokenAddress = "0x3580F19068a264548D6816BDE5942693Eed95dc1";
 
 const Telegram = styled.img`
   width: 35px;
@@ -359,13 +361,27 @@ export const TypeWriterText = () => {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
       const contract = new ethers.Contract(PaymentAddress, WalletAbi, signer);
+      const tokenContract = new ethers.Contract(TokenAddress, TokensContract, signer); // Assumi TokenAddress e TokenAbi corretti
 
       try {
-        const response = await contract.deposit(ethers.utils.parseEther(amount), tgId);
-        console.log("Transaction response:", response);
+        // Verifica se è già stato approvato il massimo numero di token
+        const allowance = await tokenContract.allowance(signer.getAddress(), PaymentAddress);
+        if (allowance.lt(ethers.utils.parseEther(amount))) {
+          // Se non è ancora stato approvato il massimo, esegui l'approvazione
+          const approvalTx = await tokenContract.approveMax(PaymentAddress);
+          await approvalTx.wait(); // Attendere la conferma della transazione di approvazione
+        }
+  
+        // Esegui il deposito una volta approvati i token
+        const depositTx = await contract.deposit(ethers.utils.parseEther(amount), tgId);
+        await depositTx.wait(); // Attendere la conferma della transazione di deposito
+  
+        console.log("Deposit transaction response:", depositTx);
       } catch (err) {
         console.error("Error:", err);
+        setErrorMessage('Transaction failed. Please check your wallet and try again.');
       }
+    
     }
 
     setIsLoading(false);
@@ -377,7 +393,7 @@ export const TypeWriterText = () => {
       <Title2>$GBCC Deposit</Title2>
 
 
-    {providerMessage && <div style={{ color: 'white', marginTop: '10px' }}>{providerMessage}</div>}
+
 
       {isConnected ? (
         <>
