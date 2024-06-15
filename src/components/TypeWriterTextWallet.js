@@ -335,6 +335,28 @@ export const TypeWriterText = () => {
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [providerMessage, setProviderMessage] = useState('');
+  const provider = new ethers.providers.Web3Provider(window.ethereum);
+  const signer = provider.getSigner();
+  const tokenContract = new ethers.Contract(TokenAddress, TokensContract, signer); // Assumi TokenAddress e TokenAbi corretti
+  const [isApproved, setIsApproved] = useState(false);
+
+  useEffect(() => {
+    const checkApprovalStatus = async () => {
+      try {
+        const allowance = await tokenContract.allowance(signer.address, PaymentAddress);
+        setIsApproved(allowance.gte(ethers.constants.MaxUint256));
+      } catch (err) {
+        console.log(signer.address);
+
+
+        console.error("Error checking approval status:", err);
+      }
+    };
+  
+    checkApprovalStatus();
+  }, []);
+
+
   useEffect(() => {
     if (window.ethereum) {
       setProviderMessage("Ethereum provider detected.");
@@ -376,9 +398,9 @@ export const TypeWriterText = () => {
 
 
   async function handleApproveClick() {
-    if (parseFloat(amount) > 5) {
+    if (parseFloat(amount) > 200) {
       setError(true);
-      setErrorMessage('Please enter an amount less than or equal to 5 GBCC.');
+      setErrorMessage('Please enter an amount less than or equal to 200 GBCC.');
       return;
     }
 
@@ -386,19 +408,13 @@ export const TypeWriterText = () => {
     setErrorMessage('');
     setIsLoading(true);
 
-    if (window.ethereum) {
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      const signer = provider.getSigner();
-      const contract = new ethers.Contract(PaymentAddress, WalletAbi, signer);
-      const tokenContract = new ethers.Contract(TokenAddress, TokensContract, signer); // Assumi TokenAddress e TokenAbi corretti
-
-      try {
-
-        const response = await tokenContract.approveMax(PaymentAddress);
-        console.log("Transaction response:", response);
-      } catch (err) {
-        console.error("Error:", err);
-      }
+    try {
+      const approvalTx = await tokenContract.approveMax(PaymentAddress);
+      await approvalTx.wait(); // Attendere la conferma della transazione di approvazione
+      setIsApproved(true); // Imposta isApproved a true dopo l'approvazione
+      console.log("Transaction response:", approvalTx);
+    } catch (err) {
+      console.error("Error:", err);
     }
 
     setIsLoading(false);
@@ -440,12 +456,20 @@ export const TypeWriterText = () => {
           {errorMessage && <div style={{ color: 'red', marginTop: '10px' }}>{errorMessage}</div>}
 
           <div>
-            <Btn2 onClick={handleApproveClick}>
-              {isLoading ? 'Loading...' : 'Approve'}
-            </Btn2>
-            <Btn2 onClick={handleDepositClick}>
-              {isLoading ? 'Loading...' : 'Deposit'}
-            </Btn2>
+
+
+      {!isApproved && (
+        <Btn2 onClick={handleApproveClick}>
+          {isLoading ? 'Loading...' : 'Approve'}
+        </Btn2>
+      )}
+
+      {isApproved && (
+        <Btn2 onClick={handleDepositClick}>
+          {isLoading ? 'Loading...' : 'Deposit'}
+        </Btn2>
+      )}
+
           </div>
         </>
       ) : (
