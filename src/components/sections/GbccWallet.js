@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components'
 import CoverVideo from '../CoverVideo'
 import TypeWriterTextWallet from '../TypeWriterTextWallet'
@@ -10,6 +10,7 @@ import RareboardImg from "../../assets/social-media-icons/Rareboard.png"
 import NftKeyImg from "../../assets/social-media-icons/NftKey.png"
 import TwitterImg from "../../assets/social-media-icons/twitter.png"
 import TelegramImg from "../../assets/social-media-icons/Telegram.png"
+
 
 
 const Twitter = styled.img`
@@ -314,6 +315,7 @@ display:flex;
     font-size: 17px;
   }
 `;
+
 export const Home = () => {
   const [click, setClick] = useState(false);
 

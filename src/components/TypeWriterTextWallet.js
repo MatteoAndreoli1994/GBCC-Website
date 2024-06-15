@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Bounce } from "react-awesome-reveal";
 import { Fade } from 'react-awesome-reveal';
@@ -332,7 +332,7 @@ export const TypeWriterText = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-
+  const [providerMessage, setProviderMessage] = useState('');
   useEffect(() => {
     if (window.ethereum) {
       setProviderMessage("Ethereum provider detected.");
