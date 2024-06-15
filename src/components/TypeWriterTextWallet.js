@@ -242,6 +242,10 @@ const TextBox = styled.input`
   margin-right: 10px;
   font-size: 16px;
   width: 200px;
+
+    @media (max-width: 60em) {
+  width: 150px;
+  }
 `;
 
 const Sottotioli = styled.p`
@@ -249,6 +253,9 @@ const Sottotioli = styled.p`
   margin-right: 10px;
   font-size: 16px;
   width: 200px;
+      @media (max-width: 60em) {
+  width: 150px;
+  }
 `;
 
 const Btn = styled.div`
