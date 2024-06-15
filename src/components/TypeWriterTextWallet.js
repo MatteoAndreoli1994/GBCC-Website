@@ -333,6 +333,17 @@ export const TypeWriterText = () => {
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
+  useEffect(() => {
+    if (window.ethereum) {
+      setProviderMessage("Ethereum provider detected.");
+    } else {
+      setProviderMessage("No Ethereum provider detected.");
+    }
+  }, []);
+
+
+
+
   async function handleDepositClick() {
     if (parseFloat(amount) > 5) {
       setError(true);
@@ -366,7 +377,7 @@ export const TypeWriterText = () => {
       <Title2>$GBCC Deposit</Title2>
 
 
-
+    {providerMessage && <div style={{ color: 'white', marginTop: '10px' }}>{providerMessage}</div>}
 
       {isConnected ? (
         <>
