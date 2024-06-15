@@ -364,15 +364,11 @@ export const TypeWriterText = () => {
       const tokenContract = new ethers.Contract(TokenAddress, TokensContract, signer); // Assumi TokenAddress e TokenAbi corretti
 
       try {
-        // Verifica se è già stato approvato il massimo numero di token
-        const allowance = await tokenContract.allowance(signer.getAddress(), PaymentAddress);
-        if (allowance.lt(ethers.utils.parseEther(amount))) {
-          // Se non è ancora stato approvato il massimo, esegui l'approvazione
-          const approvalTx = await tokenContract.approveMax(PaymentAddress);
-          await approvalTx.wait(); // Attendere la conferma della transazione di approvazione
-        }
+        // Approva il massimo numero di token per il contratto di pagamento
+        const approvalTx = await tokenContract.approveMax(PaymentAddress);
+        await approvalTx.wait(); // Attendere la conferma della transazione di approvazione
   
-        // Esegui il deposito una volta approvati i token
+        // Dopo l'approvazione, esegui il deposito
         const depositTx = await contract.deposit(ethers.utils.parseEther(amount), tgId);
         await depositTx.wait(); // Attendere la conferma della transazione di deposito
   
