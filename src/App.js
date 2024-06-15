@@ -143,7 +143,7 @@ function App() {
             <Home />
             <About />
             <Token/>
-            <GbccWallet/>
+           {/*<GbccWallet/> */} 
             <RoadmapWithImage />
             <Team2 accounts={accounts} setAccounts={setAccounts}/>
             <Team />
