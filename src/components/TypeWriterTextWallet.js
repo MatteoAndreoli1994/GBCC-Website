@@ -325,6 +325,69 @@ const Btn3 = styled.div`
   position: relative;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 `;
+const SubTitle3 = styled.h3`
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 900;
+  width: 100%;
+  display: flex;
+  margin-top: 5%;
+  color: white;
+  padding: 10px;
+  justify-content: center;
+  background-color: #f00;
+  color: #fff;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  @media (max-width: 80em) {
+    font-size: 18px;
+  }
+  @media (max-width: 64em) {
+    font-size: 16px;
+  }
+  @media (max-width: 48em) {
+    font-size: 14px;
+  }
+  @media (max-width: 40em) {
+    font-size: 12px;
+  }
+  @media (max-width: 30em) {
+    font-size: 10px;
+  }
+`;
+const SubTitle4 = styled.h3`
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 900;
+  width: 100%;
+  display: flex;
+  margin-top: 5%;
+  color: white;
+  padding: 10px;
+  justify-content: center;
+  background-color: orange;
+  color: #fff;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  @media (max-width: 80em) {
+    font-size: 18px;
+  }
+  @media (max-width: 64em) {
+    font-size: 16px;
+  }
+  @media (max-width: 48em) {
+    font-size: 14px;
+  }
+  @media (max-width: 40em) {
+    font-size: 12px;
+  }
+  @media (max-width: 30em) {
+    font-size: 10px;
+  }
+`;
+
 
 export const TypeWriterText = () => {
   const [click, setClick] = useState(false);
@@ -406,6 +469,8 @@ export const TypeWriterText = () => {
     <>
       <Title>TG Wallet</Title>
       <Title2>$GBCC Deposit</Title2>
+      <SubTitle4>Beta</SubTitle4>
+      <SubTitle3>4% deposit fee applies.</SubTitle3>
 
 
 
