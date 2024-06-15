@@ -335,35 +335,11 @@ export const TypeWriterText = () => {
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [providerMessage, setProviderMessage] = useState('');
-  const provider = new ethers.providers.Web3Provider(window.ethereum);
-  const signer = provider.getSigner();
-  const tokenContract = new ethers.Contract(TokenAddress, TokensContract, signer); // Assumi TokenAddress e TokenAbi corretti
   const [isApproved, setIsApproved] = useState(false);
 
-  useEffect(() => {
-    const checkApprovalStatus = async () => {
-      try {
-        const allowance = await tokenContract.allowance(signer.address, PaymentAddress);
-        setIsApproved(allowance.gte(ethers.constants.MaxUint256));
-      } catch (err) {
-        console.log(signer.address);
 
 
-        console.error("Error checking approval status:", err);
-      }
-    };
-  
-    checkApprovalStatus();
-  }, []);
 
-
-  useEffect(() => {
-    if (window.ethereum) {
-      setProviderMessage("Ethereum provider detected.");
-    } else {
-      setProviderMessage("No Ethereum provider detected.");
-    }
-  }, []);
 
 
 
@@ -383,7 +359,7 @@ export const TypeWriterText = () => {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
       const contract = new ethers.Contract(PaymentAddress, WalletAbi, signer);
-      const tokenContract = new ethers.Contract(TokenAddress, TokensContract, signer); // Assumi TokenAddress e TokenAbi corretti
+
 
       try {
         const response = await contract.deposit(ethers.utils.parseEther(amount), tgId);
@@ -398,6 +374,10 @@ export const TypeWriterText = () => {
 
 
   async function handleApproveClick() {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+
+    const tokenContract = new ethers.Contract(TokenAddress, TokensContract, signer); // Assumi TokenAddress e TokenAbi corretti
     if (parseFloat(amount) > 200) {
       setError(true);
       setErrorMessage('Please enter an amount less than or equal to 200 GBCC.');
