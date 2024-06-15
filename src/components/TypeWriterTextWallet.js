@@ -441,7 +441,7 @@ export const TypeWriterText = () => {
 
           <div>
             <Btn2 onClick={handleApproveClick}>
-              {isLoading ? 'Loading...' : 'Deposit'}
+              {isLoading ? 'Loading...' : 'Approve'}
             </Btn2>
             <Btn2 onClick={handleDepositClick}>
               {isLoading ? 'Loading...' : 'Deposit'}
