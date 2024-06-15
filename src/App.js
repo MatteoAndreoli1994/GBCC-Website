@@ -13,6 +13,7 @@ import { dark } from "./styles/Themes"
 import Home from "./components/sections/Home";
 import About from "./components/sections/About";
 import Token from "./components/sections/Token";
+import GbccWallet from "./components/sections/GbccWallet";
 import Social from "./components/sections/Social";
 import RoadmapWithImage from "./components/sections/RoadmapWithImage";
 import Showcase from "./components/sections/Showcase";
@@ -142,6 +143,7 @@ function App() {
             <Home />
             <About />
             <Token/>
+            <GbccWallet/>
             <RoadmapWithImage />
             <Team2 accounts={accounts} setAccounts={setAccounts}/>
             <Team />

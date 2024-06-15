@@ -41,7 +41,7 @@ margin: 0 auto;
 display: flex;
 align-items: center;
 justify-content:center;
-
+margin-bottom: 5%;
 
 @media (max-width: 70em){
   width: 90%;
@@ -234,7 +234,7 @@ const SubText2 = styled.p`
 line-height: 1.5;
 font-size: 24px;
 font-weight: 400;
-color: #5700EF;
+color: white;
 align-self: flex-start;
 width: 80%;
 margin: 1rem auto;
@@ -259,6 +259,31 @@ margin: 1rem auto;
   margin: 1 auto;
 }
 `
+const Btn2 = styled.div`
+
+  width:80%;
+  color: black;
+  outline: none;
+  border: none;
+  font-size: 14px;
+  font-family: 'Space Grotesk', sans-serif;
+  color: white;
+  justify-content: center;
+  text-align: center;
+  margin: 1%;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+  margin-top: 20px;
+    margin-left:10%;
+`;
 const SubText3 = styled.p`
 
 line-height: 1.5;
@@ -485,19 +510,24 @@ export const Token = () => {
             <Title> BUY ON PANCAKESWAP! </Title>
             <SubText> $GBCC is the utility token of Game Boyz Color Club, serving as the driving force behind the growth and sustainability of our ecosystem.
 <br></br>Users of GBCC NFTs and occasional traders and degens will benefit from this new release that combines the spirit of a MEME Coin with a utility currency!
+<br></br>
+CA: 0x3580f19068a264548d6816bde5942693eed95dc1
             </SubText>
-            <SubText2>              
-           CA: 0x3580f19068a264548d6816bde5942693eed95dc1
-        
-          </SubText2>
-          <SubText3>              
-          <LinkGitbook onClick={handleClick2}>          GITBOOK</LinkGitbook>
-        
-          </SubText3>
 
-            <ButtonContainer>
-              <ThemeProvider theme={dark}><Btn onClick={handleClick}>BUY</Btn></ThemeProvider>
-            </ButtonContainer>
+
+          <Btn2 onClick={handleClick2}>              
+          <LinkGitbook >          GITBOOK</LinkGitbook>
+        
+          </Btn2>
+
+          <Btn2 onClick={handleClick}>              
+          <LinkGitbook >          BUY</LinkGitbook>
+        
+          </Btn2>
+
+
+
+
           </Textbox>
         </Box>
         

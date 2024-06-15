@@ -154,6 +154,7 @@ align-items: center;
 display: flex;
 flex-direction: column;
 
+
 @media (max-width: 40em){
 width:80%;
 

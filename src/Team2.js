@@ -926,6 +926,8 @@ const Team = () => {
   const [Wl, setWl] = useState(1);
   const [dp3, setDp3] = useState(false);
   const [dp4, setDp4] = useState(false);
+    //inserimento
+  const PaymentContract = "0xC905F638914EaAe6A157CCa89341D888289F47b9"
 
     const { data: totalSupplyData} = useContractRead({
       address: GameBoyzColorClubTestFinalAddress,
@@ -944,7 +946,7 @@ const Team = () => {
     
 //funzione che restituisce numero di wl disponibili
     const { data: allowListMintCounterData} = useContractRead({
-      address: GameBoyzColorClubTestFinalAddress,
+      address: PaymentContract,
       abi: GameBoyzColorClubTestFinal.abi,
       functionName: "allowListMintCounter",
       watch: true,
