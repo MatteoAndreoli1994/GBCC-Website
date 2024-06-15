@@ -352,23 +352,27 @@ export const TypeWriterText = () => {
       setErrorMessage('Please enter an amount less than or equal to 5 GBCC.');
       return;
     }
-
+  
     setError(false);
     setErrorMessage('');
     setIsLoading(true);
-
+  
     if (window.ethereum) {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
       const contract = new ethers.Contract(PaymentAddress, WalletAbi, signer);
       const tokenContract = new ethers.Contract(TokenAddress, TokensContract, signer); // Assumi TokenAddress e TokenAbi corretti
-
-      try {
-        // Approva il massimo numero di token per il contratto di pagamento
-        const approvalTx = await tokenContract.approveMax(PaymentAddress);
-        await approvalTx.wait(); // Attendere la conferma della transazione di approvazione
   
-        // Dopo l'approvazione, esegui il deposito
+      try {
+        // Verifica se è già stato approvato il massimo numero di token
+        const allowance = await tokenContract.allowance(signer.getAddress(), PaymentAddress);
+        if (allowance.lt(ethers.utils.parseEther(amount))) {
+          // Se non è ancora stato approvato il massimo, esegui l'approvazione
+          const approvalTx = await tokenContract.approveMax(PaymentAddress);
+          await approvalTx.wait(); // Attendere la conferma della transazione di approvazione
+        }
+  
+        // Esegui il deposito una volta approvati i token
         const depositTx = await contract.deposit(ethers.utils.parseEther(amount), tgId);
         await depositTx.wait(); // Attendere la conferma della transazione di deposito
   
@@ -377,11 +381,12 @@ export const TypeWriterText = () => {
         console.error("Error:", err);
         setErrorMessage('Transaction failed. Please check your wallet and try again.');
       }
-    
     }
-
+  
     setIsLoading(false);
   }
+  
+  
 
   return (
     <>
