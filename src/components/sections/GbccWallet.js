@@ -74,6 +74,9 @@ const float = keyframes`
 
 const FloatingImage = styled.div`
   position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* Allinea il contenuto a destra */
 
   img {
     display: block;
@@ -82,11 +85,11 @@ const FloatingImage = styled.div`
   }
 
   .shadow {
-
+    /* Stili per l'ombra se necessario */
   }
 
   animation: ${float} 3s ease-in-out infinite;
-`
+`;
 
 
 const Section = styled.section`
@@ -113,6 +116,8 @@ min-height: 60vh;
 display: flex;
 justify-content: top;
 align-items:center;
+margin-bottom:10%;
+margin-top:5%;
 
 
 
@@ -126,6 +131,7 @@ align-items:center;
 
 
 }
+  
 `
 
 const Box = styled.div`
@@ -148,22 +154,20 @@ flex-direction: column;
 `
 
 const ColumnContainer = styled.div`
-width: 50%;
-height: 100%;
-
-justify-content: center;
-align-items: center;
-display: flex;
-flex-direction: column;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Posiziona il contenuto a destra */
 
 
-@media (max-width: 40em){
-width:80%;
 
-margin-bottom:2rem;
+  @media (max-width: 40em) {
+    width: 80%;
+    margin-bottom: 2rem;
+  }
+`;
 
-}
-`
 const ButtonContainer = styled.div`
 width: 100%;
 display:flex;

@@ -32,114 +32,140 @@ overflow: hidden;
 
 `
 const Container = styled.div`
+  width: 80%;
+  height: 100%;
 
-width: 90%;
-height:100%;
-
-min-height: 80vh;
-margin: 0 auto;
-display: flex;
-align-items: center;
-justify-content:center;
-margin-bottom: 5%;
-
-@media (max-width: 70em){
-  width: 90%;
-}
-
-
-@media (max-width: 64em){
-  width: 90%;
-  flex-direction: column;
+  border-radius: 30px;
+  min-height: 80vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 
 
-  @media (max-width: 40em){
+
+
+  @media (max-width: 70em) {
+    width: 80%;
+      margin-bottom: 10%;
+  }
+
+  @media (max-width: 64em) {
+
     flex-direction: column;
-
   }
 
-  @media (max-width: 30em){
-
-
+  @media (max-width: 40em) {
+    flex-direction: column;
   }
-  
-`
+
+  @media (max-width: 30em) {
+    flex-direction: column;
+  }
+`;
+const LogoImage = styled.img`
+  width: 75%;
+  height: auto;
+  align-self: flex-end;
+
+
+  @media (max-width: 64em) {
+    align-self: center; /* Allinea al centro invece di a destra */
+      width: 75%;
+  }
+`;
+
 const Box1 = styled.div`
-width:50%;
-
-height:auto;
-display: flex;
-
-flex-direction: column;
-Justify-content: center;
-align-items: center;
-
-
-@media (max-width: 64em){
-
-
+  width: 50%;
+  height: auto;
+  display: flex;
   flex-direction: column;
-  height: 70vh;
-  width:100%;
-
+  justify-content: center;
   align-items: center;
 
-}
-@media (max-width: 40em){
 
+  @media (max-width: 64em) {
+  display:none;
+    flex-direction: column;
+    height: 70vh;
+    width: 100%;
+    align-items: center;
+  }
+
+  @media (max-width: 40em) {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  @media (max-width: 30em) {
+    height: 30vh;
+
+    justify-content: start;
+  }
+`;
+const Box1Mobile = styled.div`
+
+  display:none;
+
+
+  @media (max-width: 64em) {
+
+
+  display:flex;
   flex-direction: column;
+  height: auto;
+  width: 70%;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15%;
 
-  width:100%;
 
+  }
 
-}
+  @media (max-width: 40em) {
+    flex-direction: column;
+    width: 100%;
+  margin-left: 0%;
+    height: auto;
 
-@media (max-width: 30em){
+  }
 
-  height: 30vh;
-display:flex;
-justify-content:start;
-}
-`
+  @media (max-width: 30em) {
+
+    display: flex;
+    justify-content: start;
+  }
+`;
 
 const Box = styled.div`
-
-min-height: 60vh;
-width:50%;
-display: flex;
-
-flex-direction: column;
-Justify-content: center;
-align-items: center;
-
-
-
-
-@media (max-width: 64em){
-
+  min-height: 60vh;
+  width: 50%;
+  display: flex;
   flex-direction: column;
-  height: 100%;
-  width:100%;
-  justify-content:center;
+  justify-content: center;
+  align-items: center;
 
+  @media (max-width: 64em) {
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+  }
 
-}
-@media (max-width: 30em){
+  @media (max-width: 30em) {
+    min-height: 20vh;
+    margin-bottom: 2rem;
+  }
+`;
 
-
-min-height: 20vh;
-margin-bottom:2rem;
-}
-
-`
 const Title = styled.h2`
 
 line-height: 1;
 margin-left:2rem auto;
 margin: 1.5rem auto;
-width: 80%;
-font-size: 56px;
+width: 100%;
+font-size: 55px;
 font-weight: 900;
 
 
@@ -208,7 +234,7 @@ font-size: 24px;
 font-weight: 400;
 color: #E4E3E3;
 align-self: flex-start;
-width: 80%;
+width: 100%;
 margin: 1rem auto;
 
 
@@ -216,6 +242,7 @@ margin: 1rem auto;
 @media (max-width: 64em){
   font-size: 20px;
   text-align:center;
+  display:none;
 }
 @media (max-width: 40em){
   width: 100%;
@@ -230,20 +257,23 @@ margin: 1rem auto;
   margin: 0 auto;
 }
 `
-const SubText2 = styled.p`
+const SubTextMobile = styled.p`
+
 line-height: 1.5;
 font-size: 24px;
 font-weight: 400;
-color: white;
+color: #E4E3E3;
 align-self: flex-start;
-width: 80%;
+width: 100%;
 margin: 1rem auto;
 
-
+display:none;
 
 @media (max-width: 64em){
   font-size: 20px;
   text-align:center;
+  display:flex;
+  width:80%;
 }
 @media (max-width: 40em){
   width: 100%;
@@ -254,14 +284,13 @@ margin: 1rem auto;
 @media (max-width: 30em){
   width: 100%;
   text-align:center;
-  font-size: 11px;
-
-  margin: 1 auto;
+  font-size: ${props => props.theme.fontsm};
+  margin: 0 auto;
 }
 `
 const Btn2 = styled.div`
 
-  width:80%;
+  width:100%;
   color: black;
   outline: none;
   border: none;
@@ -270,7 +299,7 @@ const Btn2 = styled.div`
   color: white;
   justify-content: center;
   text-align: center;
-  margin: 1%;
+
   padding: 0.9rem 1rem;
   border-radius: 10px;
   cursor: pointer;
@@ -282,7 +311,7 @@ const Btn2 = styled.div`
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
   }
   margin-top: 20px;
-    margin-left:10%;
+
 `;
 const SubText3 = styled.p`
 
@@ -340,7 +369,7 @@ font-weight: 800;
 line-height: 1;
 color: #5700EF;
 margin: 1rem auto;
-width: 80%;
+width: 100%;
 display:flex;
 
 
@@ -469,6 +498,92 @@ text-shadow:
   }
 
 `
+const Info = styled.div`
+width:100%;
+display:flex;
+
+margin-top:10%;
+
+
+@media(max-width: 64em){
+align-items:center;
+justify-content:center;
+margin-top:4%;
+}
+
+`;
+const SubTitle4 = styled.h3`
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 900;
+  width: 200px;
+  display: flex;
+  margin-right:2%;
+
+  padding: 10px;
+  justify-content: center;
+  background-color: #5700EF;
+  color: #fff;
+  border-radius: 10px;
+
+  text-align: center;
+  @media (max-width: 80em) {
+    font-size: 18px;
+  }
+  @media (max-width: 64em) {
+    font-size: 16px;
+  }
+  @media (max-width: 48em) {
+    font-size: 14px;
+  }
+  @media (max-width: 40em) {
+    font-size: 12px;
+  }
+  @media (max-width: 30em) {
+    font-size: 10px;
+  }
+`;
+const SubTitle3 = styled.h3`
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 900;
+  width: 200px;
+  display: flex;
+
+  color: white;
+  padding: 10px;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border:1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.37);
+
+  color: #fff;
+  border-radius: 10px;
+
+  text-align: center;
+  margin-right:2%;
+  cursor: pointer;
+
+
+  @media (max-width: 80em) {
+    font-size: 18px;
+  }
+  @media (max-width: 64em) {
+    font-size: 16px;
+  }
+  @media (max-width: 48em) {
+    font-size: 14px;
+  }
+  @media (max-width: 40em) {
+    font-size: 12px;
+  }
+  @media (max-width: 30em) {
+    font-size: 10px;
+  }
+`;
 
 
 export const Token = () => {
@@ -498,38 +613,47 @@ export const Token = () => {
     <Section id="token">
       
       <Container>
-      <UptextMobile>$GBCC TOKEN </UptextMobile> 
-        <Box1>
-         <img src={LOGO} alt="LOGO" style={{ width: '70%', height: 'auto' }} />
-        </Box1>
 
-        <Box>
+      <Box>
           <Textbox>
             <Uptext>$GBCC TOKEN </Uptext> 
 
-            <Title> BUY ON PANCAKESWAP! </Title>
-            <SubText> $GBCC is the utility token of Game Boyz Color Club, serving as the driving force behind the growth and sustainability of our ecosystem.
-<br></br>Users of GBCC NFTs and occasional traders and degens will benefit from this new release that combines the spirit of a MEME Coin with a utility currency!
-<br></br>
-CA: 0x3580f19068a264548d6816bde5942693eed95dc1
+      <UptextMobile>$GBCC TOKEN </UptextMobile> 
+
+
+            
+
+            <Title> Game Boyz Color Coin </Title>
+            <SubText> 
+            $GBCC is the utility token of Game Boyz Color Club, serving as the driving force behind the growth and sustainability of our ecosystem.
             </SubText>
 
 
-          <Btn2 onClick={handleClick2}>              
-          <LinkGitbook >          GITBOOK</LinkGitbook>
-        
-          </Btn2>
 
-          <Btn2 onClick={handleClick}>              
-          <LinkGitbook >          BUY</LinkGitbook>
-        
-          </Btn2>
+            <Box1Mobile>
+                <LogoImage src={LOGO} alt="LOGO" />
+            </Box1Mobile>
+      
+            <SubTextMobile> 
+            $GBCC is the utility token of Game Boyz Color Club, serving as the driving force behind the growth and sustainability of our ecosystem.
+            </SubTextMobile>
+
+          <Info>      <SubTitle3 onClick={handleClick2}>GITBOOK</SubTitle3>
+          <SubTitle3 onClick={handleClick}>BUY</SubTitle3></Info>
+
+
 
 
 
 
           </Textbox>
         </Box>
+
+        <Box1>
+          <LogoImage src={LOGO} alt="LOGO" />
+        </Box1>
+
+
         
       </Container>
      

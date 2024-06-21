@@ -35,7 +35,7 @@ const OpenSea = styled.img`
 `;
 
 const Title = styled.h2`
-  font-size: 100px;
+  font-size: 60px;
   line-height: 1;
   font-weight: 900;
   width: 100%;
@@ -44,7 +44,7 @@ const Title = styled.h2`
   color: white;
 
   @media (max-width: 80em) {
-    font-size: 80px;
+    font-size: 60px;
   }
   @media (max-width: 60em) {
     font-size: 60px;
@@ -105,7 +105,7 @@ const TitleMobile = styled.h2`
 `;
 
 const Title2 = styled.h2`
-  font-size: 50px;
+  font-size: 30px;
   line-height: 1;
   font-weight: 900;
   width: 100%;
@@ -177,10 +177,11 @@ const Title2Mobile = styled.h2`
 
 const SubTitle2 = styled.h2`
   font-size: 25px;
-  line-height: 1;
+  line-height: 1.5;
   font-weight: 900;
   width: 100%;
-  background-color:red;
+
+
   display: flex;
   margin-top: 10.5%;
   color: white;
@@ -195,23 +196,21 @@ const SubTitle2 = styled.h2`
   font-size: 20px;
   }
   @media (max-width: 64em) {
-  font-size: 20px;
+  font-size: 10px;
+    padding: 70px;
   }
-  font-size: 20px;
-  }
+
+  
   @media (max-width: 40em) {
-    br {
-    
-    }
+
     text-align: center;
-    font-size: 20px;
+    font-size: 15px;
   }
   @media (max-width: 30em) {
-    br {
 
-    }
     text-align: center;
-    font-size: 17px;
+    font-size: 15px;
+
   }
 `;
 
@@ -252,6 +251,7 @@ const TextBox = styled.input`
 
 const Sottotioli = styled.p`
   padding: 10px;
+    font-family: 'Space Grotesk', sans-serif;
   margin-right: 10px;
   font-size: 16px;
   width: 200px;
@@ -329,22 +329,26 @@ const SubTitle3 = styled.h3`
   font-size: 20px;
   line-height: 1;
   font-weight: 900;
-  width: 100%;
+  width: 230px;
   display: flex;
   margin-top: 5%;
   color: white;
   padding: 10px;
   justify-content: center;
-  background-color: #f00;
+  background-color: #4EA5D9;
   color: #fff;
   border-radius: 10px;
-  border: 1px solid #ccc;
+
   text-align: center;
+  margin-left:2%;
+
+
   @media (max-width: 80em) {
     font-size: 18px;
   }
   @media (max-width: 64em) {
     font-size: 16px;
+      width: 150px;
   }
   @media (max-width: 48em) {
     font-size: 14px;
@@ -360,22 +364,23 @@ const SubTitle4 = styled.h3`
   font-size: 20px;
   line-height: 1;
   font-weight: 900;
-  width: 100%;
+  width: 100px;
   display: flex;
   margin-top: 5%;
-  color: white;
+
   padding: 10px;
   justify-content: center;
-  background-color: orange;
+  background-color: #5700EF;
   color: #fff;
   border-radius: 10px;
-  border: 1px solid #ccc;
+
   text-align: center;
   @media (max-width: 80em) {
     font-size: 18px;
   }
   @media (max-width: 64em) {
     font-size: 16px;
+      width: 50px;
   }
   @media (max-width: 48em) {
     font-size: 14px;
@@ -387,7 +392,12 @@ const SubTitle4 = styled.h3`
     font-size: 10px;
   }
 `;
+const Info = styled.div`
+width:100%;
+display:flex;
 
+align-items:center;
+`;
 
 export const TypeWriterText = () => {
   const [click, setClick] = useState(false);
@@ -467,10 +477,12 @@ export const TypeWriterText = () => {
 
   return (
     <>
-      <Title>TG Wallet</Title>
-      <Title2>$GBCC Deposit</Title2>
-      <SubTitle4>Beta</SubTitle4>
-      <SubTitle3>4% deposit fee applies.</SubTitle3>
+      <Title>GBCC Wallet</Title>
+      <Title2>Deposit</Title2>
+
+      <Info>      <SubTitle4>Beta</SubTitle4>
+      <SubTitle3>Deposit Fees: 4%</SubTitle3></Info>
+
 
 
 
@@ -521,7 +533,7 @@ export const TypeWriterText = () => {
 
         
 
-        <SubTitle2>Connect Your Wallet to Deposit!</SubTitle2>
+        <SubTitle2>Connect Your Wallet!</SubTitle2>
 
       )}
     </>
