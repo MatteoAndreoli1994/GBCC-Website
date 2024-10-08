@@ -418,9 +418,9 @@ export const TypeWriterText = () => {
 
 
   async function handleDepositClick() {
-    if (parseFloat(amount) > 200) {
+    if (parseFloat(amount) > 2000) {
       setError(true);
-      setErrorMessage('Please enter an amount less than or equal to 200 GBCC.');
+      setErrorMessage('Please enter an amount less than or equal to 2000 GBCC.');
       return;
     }
 
