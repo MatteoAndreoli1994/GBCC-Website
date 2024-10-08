@@ -497,7 +497,7 @@ export const TypeWriterText = () => {
           <ButtonContainer>
             <TextBox
               type="text"
-              placeholder="$GBCC"
+              placeholder="$TGBCC"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
               error={error}

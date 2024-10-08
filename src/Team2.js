@@ -1024,7 +1024,7 @@ const Team = () => {
         );
         try{
             const response = await contract.mint(BigNumber.from(mintAmount), { 
-              value: ethers.utils.parseEther((0.06 * mintAmount).toString()),
+              value: ethers.utils.parseEther((0.04 * mintAmount).toString()),
             });
             console.log('response: ', response);
         } catch(err){
@@ -1083,7 +1083,7 @@ const Team = () => {
                               {isConnected ? (
                                       <Display>
                                        
-                                      <SubTextLight> PUBLIC MINT <br></br>PRICE: 0.06 BNB</SubTextLight>
+                                      <SubTextLight> PUBLIC MINT <br></br>PRICE: 0.04 BNB</SubTextLight>
 
                                             <SubTextLightAmount>←  {mintAmount}  →</SubTextLightAmount>
                                             
