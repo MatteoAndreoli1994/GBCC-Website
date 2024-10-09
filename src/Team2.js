@@ -1269,7 +1269,7 @@ const Team = () => {
 
 
               </>
-              ):(<SubTextContainer><SubTextLight>PUBLIC MINT <br></br> 06/05/2023 14:00 UTC</SubTextLight></SubTextContainer> )
+              ):(<SubTextContainer><SubTextLight>PUBLIC MINTCTOBER<br></br> 10/09/2024 14:00 UTC</SubTextLight></SubTextContainer> )
             }
 
 
