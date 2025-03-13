@@ -16,6 +16,8 @@ const Section = styled.nav`
   position: fixed;
   top: 0;
   z-index: 100;
+
+    pointer-events: auto; /* Assicura che la navbar non blocchi lo scrolling */
 `;
 
 const Navbar = styled.section`
