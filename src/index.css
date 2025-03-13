@@ -23,12 +23,15 @@ body {
 }
 
 
-html, body {
-  overflow: auto;
-}
 html {
   overflow-x: hidden;
 }
+
+body {
+  overflow-x: hidden; /* Evita scorrimenti orizzontali */
+  overflow-y: auto;   /* Abilita lo scorrimento verticale */
+}
+
 
 
 /* Aggiungi una classe per risolvere eventuali bordi bianchi su iOS */
