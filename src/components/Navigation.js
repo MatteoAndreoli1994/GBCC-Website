@@ -1,463 +1,335 @@
-import React, { useState, useEffect } from 'react'
-import styled from "styled-components"
-import Logo from "./Logo"
-import { Link } from "react-router-dom";
-import Button from "./Button"
-
-
-import '../components/Navigation.css'
+import React, { useState, useEffect, useRef } from 'react';
+import styled from "styled-components";
+import Logo from "./Logo";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
-import {useAccount} from 'wagmi';
-import { animated, useSpring } from 'react-spring';
-import TwitterImg from "../assets/social-media-icons/twitter.png"
-import TelegramImg from "../assets/social-media-icons/Telegram.png"
+import { FaTwitter, FaTelegramPlane } from 'react-icons/fa'; 
 
+import MobileMenuContent from '../components/sections/Menumobile';
+import CustomConnectButton from '../components/sections/CustomConnectButton';
 
 const Section = styled.nav`
-width: 100vw;
-min-height:10vh;
-display: flex;
-justify-content: center;
-align-items: center;
-position: sticky;
-top: 0;
-z-index: 1;
-overflow: hidden;
-
-`
-
-const Btn = styled.div`
-margin-right:20%;
-display: flex;
-background-color: #5700EF;
-color: black;
-outline: none;
-border: none;
-font-size: 14px;
-font-family: 'Space Grotesk', sans-serif;
-color: white;
-justify-content: center;
-text-align: center;
-font-weight: 700;
-align-items:center;
-padding: 0.9rem 2.3rem;
-border-radius: 10px;
-cursor: pointer;
-transition: all 0.2s ease;
-position: relative;
-box-shadow: 0 0 10px rgba(0,0,0,0.1);
-
-&:hover{
-  transform: scale(1.05);
-  box-shadow: 0 0 40px rgba(0,0,0,0.3);
-}
-
-@media (max-width: 40em){
-  padding: 0.8rem 2rem;
-  margin-top:5%;
-  margin:10%;
-  font-size: 12px;
-}
-`
-const GamesDiv = styled.button`
-  background-color: #CCCCCC;
-  color: #666666;
-  border: none;
-  cursor: not-allowed;
-  opacity: 0.5;
-  font-weight: bold;
-  font-size: 1.2rem;
-  padding: 10px 20px;
-  border-radius: 5px;
-  &:hover {
-    background-color: #CCCCCC;
-    color: #666666;
-  }
-
-
-  @media (max-width: 40em){
-    font-size: 0.9rem;
-    margin-bottom: 0.3rem;
-    }
-`;
-
-const Warning = styled(animated.div)`
-  position: absolute;
-  top: 0px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  background-color: #FFCC00;
-  color: #333333;
-  border: 1px solid #333333;
-  border-radius: 5px;
-  padding: 10px;
-  font-weight: bold;
-  font-size: 1.2rem;
+  width: 100vw;
+  height: 13vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 100;
 `;
 
 const Navbar = styled.section`
-display: flex;
-justify-content: space-between;
-align-items: center;
-
-width: 80%;
-height: ${props => props.theme.navHeight};
-
-@media (max-width: 40em){
-  width: 80%;
-  }
-
-`
-const Menu = styled.ul`
-
-align-items:center;
-display: flex;
-justify-content: space-between;
-align-item: center;
-list-style: none;
-
-@media (max-width: 80em){
-  position:fixed;
-  top: ${props => props.theme.navHeight};
-  left: 0;
-  right: 0;
-  bottom: 0;
-  backdrop-filter: blur(2px);
-
-  transform: ${props => props.click ? `translateY(0)` : `translateY(+2000%)`};
-  
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  width: 100vw;
-  height: ${props => `calc(100vh - ${props.theme.navHeight})`};
-  z-index:50;
-  background-color: ${props => `rgba(213, 184, 255,0.95)`};
-  
-  flex-direction: column;
-  justify-content: center;
+  width: 100%;
+  padding: 3%;
+  height: ${props => props.theme.navHeight};
 
-}
+  @media (max-width: 40em) {
+    width: 90%;
+  }
+`;
 
+const Menu = styled.ul`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
 
+  background-color: transparent;
+  z-index: 800;
 
+  @media (max-width: 60em) {
+    display: none;
+  }
+`;
 
-`
 const MenuItem = styled.li`
-
-margin:0 1.5rem;
-color: white;
-cursor: pointer;
-font-size: 16px;
-font-weight: 800;
-
-&::after{
-  content: ' ';
-  display: block;
-  width: 0%;
-  height: 2px;
-  background: ${props => props.theme.text};
-  transition: width 0.3s ease;
-}
-&:hover::after{
-  width: 100%;
-}
-@media (max-width:80em){
-  margin: 1rem 0;
+  margin: 0 1rem;
   color: white;
-  &::after{
-     display: none;
+  cursor: pointer;
+  padding: 12px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  letter-spacing: 1.5px;
+
+  &:hover {
+    background-color: white;
+    color: black;
   }
-}
+`;
 
-`
-const MenuItemMobile = styled.li`
+const SocialMenuItem = styled(MenuItem)`
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 
-margin:0 2rem;
-color: white;
-cursor: pointer;
-font-size: 15px;
-font-weight: 800;
-display: none;
-&::after{
-  content: ' ';
-  display: block;
-  width: 0%;
-  height: 2px;
-  background: ${props => props.theme.text};
-  transition: width 0.3s ease;
-}
-&:hover::after{
-  width: 100%;
-}
-@media (max-width:80em){
-  margin: 1rem 0;
-  color: white;
-  display:flex;
-  &::after{
-
+  &::after {
+    content: "▼";
+    font-size: 8px;
+    margin-left: 4px;
+    transition: transform 0.3s ease;
   }
-}
 
-`
-const MenuItemSoc = styled.li`
+  ${props => props.show && `
+    &::after {
+      transform: rotate(180deg);
+    }
+  `}
+`;
 
-margin:0 1rem;
-color: white;
-cursor: pointer;
-font-size: 15px;
-font-weight: 800;
+const SocialDropdown = styled.div`
+  position: absolute;
+  top: 140%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  display: ${props => props.show ? 'flex' : 'none'};
+  flex-direction: column;
 
-&::after{
-  content: ' ';
-  display: block;
-  width: 0%;
-  height: 2px;
-  background: ${props => props.theme.text};
-  transition: width 0.3s ease;
-}
-&:hover::after{
-  width: 100%;
-}
-@media (max-width:80em){
-  margin: 1rem 0;
-  color: black;
-  &::after{
-     display: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+
+  a {
+    display: flex;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, opacity 0.3s ease, margin 0.3s ease;
+    letter-spacing: 1.5px;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    &:hover {
+      background: #f5f5f5;
+      opacity: 0.8;
+    }
+
+    img {
+      width: 20px;
+      height: 20px;
+      margin-right: 12px;
+      filter: brightness(0) invert(1);
+    }
   }
-}
-
-`
-const MenuItemSocial = styled.div`
-
-
-color: white;
-cursor: pointer;
-font-size: 15px;
-font-weight: 800;
-
-&::after{
-  content: ' ';
-  display: block;
-  width: 0%;
-  height: 2px;
-  background: ${props => props.theme.text};
-  transition: width 0.3s ease;
-}
-&:hover::after{
-  width: 100%;
-}
-@media (max-width:80em){
-
-  color: black;
-
-  display: none;
-  &::after{
-     display: none;
-  }
-}
-@media (max-width:45em){
-
-
-
-}
-
-`
-const MenuItemGames = styled.li`
-
-margin:0 2rem;
-color: white;
-cursor: pointer;
-font-family: "Custom-Archivo-Bold";
-font-weight: 400;
-font-size: 14px;
-
-
-`
-
+`;
 
 const HamburgerContainer = styled.div`
+  width: 40px;
+  height: 40px;
+  position: relative;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
 
-width: ${props => props.click ? '10rem' : '8rem'};
-height: 4rem;
-position: absolute;
-
-color: white;
-top: ${props => props.click ? '0rem' : '2rem' };
-left: 50%;
-transform: ${props => props.click ? 'translateX(-50%) rotate(90deg)' : 'translateX(-50%) rotate(0)'};
-display: flex;
-justify-content: center;
-align-items:center;
-display:none;
-cursor: pointer;
-
-
-@media (max-width: 80em){
-  display:flex;
-
-}
-@media (max-width: 40em){
-left: 75%;
-
-}
-`
-
-const DesktopVisibility = styled.div`
-@media (max-width: 40em){
-  display:none;
-}
-`
-const MobileVisibility = styled.div`
-display:none;
-@media (max-width: 40em){
-  margin-top:2%;
-  display: block;
-}
-`
+  @media (max-width: 60em) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
 
 const HamburgerMenu = styled.span`
-
-width: ${props => props.click ? '5.3em' : '3rem' }; 
-height: ${props => props.click ? '0px' : '6px' };
-background: white;
-color:white;
-position: absolute;
-transition: all 0.2s ease;
-left: 50%;
-transform: ${props => props.click ? '' : 'translateX(-50%) rotate(0)'};
-display: flex;
-justify-content: center;
-align-items:center;
-border-radius: 55px;
-
-cursor: pointer;
-display: none;
-
-@media (max-width: 80em){
-  display:flex;
-}
-
-&::after, &::before{
-  content: ' ';
-  width: ${props => props.click ? '4rem' : '3rem' };
-  height: ${props => props.click ? '10px' : '6px' };
-  right: ${props => props.click ? '25%' : '0rem' };
-  background: white;
-  border-radius: 55px;
+  width: 24px;
+  height: 2px;
+  background: ${props => props.click ? 'black' : 'white'};
   position: absolute;
-}
+  transition: all 0.3s ease;
+  transform: ${props => props.click ? 'rotate(45deg)' : 'rotate(0)'};
 
-&::after{
-  top: ${props => props.click ? '-0.3rem' : '1rem' };
-  transform: ${props => props.click ? ' rotate(-45deg)' : 'rotate(0)'};
-  color:red;
-}
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: ${props => props.click ? 'black' : 'white'};
+    transition: all 0.3s ease;
+  }
 
-&::before{
-  bottom: ${props => props.click ? '-0.3rem' : '1rem' };
-  transform: ${props => props.click ? ' rotate(45deg)' : 'rotate(0)'};
-}
-`
-const Twitter = styled.img`
-width:22px;
-height:22px;
-margin:1rem;
+  &::before {
+    transform: ${props => props.click ? 'rotate(90deg)' : 'translateY(-8px)'};
+  }
 
-`
-const Telegram = styled.img`
-width:22px;
-height:22px;
-margin-left:12%;
-margin:1rem;
+  &::after {
+    transform: ${props => props.click ? 'rotate(90deg)' : 'translateY(8px)'};
+  }
+`;
 
-`
- 
-const Navigation = () => { 
-  const {isConnected} = useAccount();
+const DesktopVisibility = styled.div`
+  @media (max-width: 60em) {
+    display: none;
+  }
+`;
 
+const MobileMenu = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 200;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
+`;
+
+const MobileVisibility = styled.div`
+  display: none;
+  @media (max-width: 40em) {
+    display: block;
+    margin-top: 2rem;
+  }
+`;
+
+const Social = styled.h3`
+  margin-left: 20px;
+`;
+
+const Navigation = () => {
   const [click, setClick] = useState(false);
+  const [showSocialDropdown, setShowSocialDropdown] = useState(false);
 
-  const scrollTo = (id) =>{
+  const socialDropdownRef = useRef(null);
+  const menuRef = useRef(null);
+
+  const [scrolling, setScrolling] = useState(false);
+  const timeoutRef = useRef(null); // Create a ref for the timeout
+  
+  // Media query breakpoint (should match the CSS breakpoint)
+  const desktopBreakpoint = 60; // 60em
+
+  const scrollTo = (id) => {
     let element = document.getElementById(id);
-
     element.scrollIntoView({
       behavior: 'smooth',
       block: 'start',
       inline: 'nearest',
-    })
+    });
+    setClick(false);
+  };
 
-    setClick(!click);
-  }
+  // Add resize event listener to check for screen size changes
+  useEffect(() => {
+    const handleResize = () => {
+      // Convert em to pixels (assuming 1em = 16px)
+      const emToPx = 16;
+      const breakpointPx = desktopBreakpoint * emToPx;
+      
+      // If window width is greater than our breakpoint, close mobile menu
+      if (window.innerWidth > breakpointPx && click) {
+        setClick(false);
+      }
+    };
 
-const [fix, setFix] = useState(false);
-let lastScrollY = window.scrollY;
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+    
+    // Clean up
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [click]); // Only re-run if click state changes
 
-  function setFixed(){
-    if(window.scrollY >= 200){
+  // Monitor scroll events
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolling(true); // Set scrolling state when scrolling happens
+    };
 
-        setFix(true);
+    const handleClickOutside = (event) => {
+      if (socialDropdownRef.current && !socialDropdownRef.current.contains(event.target) && !menuRef.current.contains(event.target)) {
+        setShowSocialDropdown(false);
+      }
+    };
 
+    document.addEventListener('mousedown', handleClickOutside);
+    window.addEventListener('scroll', handleScroll);
 
-    }else{
-      setFix(false);
+    // Delay the dropdown close if scrolling happens
+    if (scrolling) {
+      // Set a timeout to close dropdown after 500ms of no scrolling
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = setTimeout(() => {
+        setShowSocialDropdown(false);
+      }, 500); // Wait for 500ms after scrolling before closing dropdown
     }
 
-    lastScrollY = window.scrollY;
+    // Cleanup the timeout on unmount or scrolling change
+    return () => {
+      clearTimeout(timeoutRef.current); // Cleanup the timeout
+      document.removeEventListener('mousedown', handleClickOutside);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolling]);
 
-  }
-
-window.addEventListener('scroll', setFixed);
-
-const [showWarning, setShowWarning] = useState(false);
-
-const warningAnimation = useSpring({
-  from: { opacity: 0, transform: 'translateY(-50px)' },
-  to: { opacity: showWarning ? 1 : 0, transform: showWarning ? 'translateY(0)' : 'translateY(-50px)' },
-});
-  
   return (
-
-    <Section className={fix? 'navbar fixed ': 'navbar'}>
+    <Section>
       <Navbar>
-
-      <Logo />
-      
-      <HamburgerContainer click={click} onClick={() => setClick(!click)}>
-      
-        <HamburgerMenu click={click} onClick={() => setClick(!click)}>
-          
-        </HamburgerMenu>
-        </HamburgerContainer>
-
-        <Menu click={click}>
-        <MenuItem onClick={()=> scrollTo('token')}>$GBCC</MenuItem>
-          <MenuItem onClick={()=> scrollTo('about')}>About</MenuItem>
-          <MenuItem onClick={()=> scrollTo('roadmap')}>RoadMap</MenuItem>
-
-         <MenuItem><a href="https://www.gameboyzcolorclub.com/leveling">Leveling</a></MenuItem>
-
-          <MenuItem onClick={()=> scrollTo('mint')}>Mint</MenuItem>
-          <MenuItem onClick={()=> scrollTo('team')}>Team</MenuItem>
-          <MenuItem onClick={()=> scrollTo('faq')}>Faq</MenuItem>
-
-          <MenuItem><a href="https://gbcc-deployer.gitbook.io/game-boyz-color-club-whitepaper/" >Whitepaper</a></MenuItem>
-
-
-
-          <MobileVisibility><ConnectButton showBalance={false}/></MobileVisibility>
-
+        <Logo style={{ zIndex: 9999 }} />
+        <Menu ref={menuRef}>
+          <MenuItem onClick={() => scrollTo('about')}>ABOUT</MenuItem>
+          <MenuItem onClick={() => scrollTo('token')}>$GBCC</MenuItem>
+          <SocialMenuItem 
+            onClick={() => setShowSocialDropdown(!showSocialDropdown)}
+            show={showSocialDropdown}
+          >
+            SOCIALS
+            <SocialDropdown ref={socialDropdownRef} show={showSocialDropdown}>
+              <a href="https://x.com/GBCCNFT" target="_blank" rel="noopener noreferrer">
+                <FaTwitter style={{ color: 'black', fontSize: 'larger' }} />
+                <Social>X.COM</Social>
+              </a>
+              <a href="https://t.me/GBCCNFT" target="_blank" rel="noopener noreferrer">
+                <FaTelegramPlane style={{ color: 'black', fontSize: 'larger' }} />
+                <Social>TELEGRAM</Social>
+              </a>
+            </SocialDropdown>
+          </SocialMenuItem>
+          <MobileVisibility>
+            <ConnectButton showBalance={false} />
+          </MobileVisibility>
         </Menu>
-        
 
-        <DesktopVisibility><ConnectButton showBalance={false}/></DesktopVisibility>
+        {click && (
+          <MobileMenu>
+            <MobileMenuContent 
+              onClose={() => setClick(false)} // Close when user clicks outside or close button
+              onNavigate={(id) => {
+                scrollTo(id); // Scroll to section
+                setClick(false); // Close menu
+              }}
+            />
+          </MobileMenu>
+        )}
 
-        
 
+        <DesktopVisibility>
+          <CustomConnectButton />
+        </DesktopVisibility>
+
+        <HamburgerContainer onClick={() => setClick(!click)}>
+          <HamburgerMenu click={click} />
+        </HamburgerContainer>
       </Navbar>
-
     </Section>
-      
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;

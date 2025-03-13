@@ -50,27 +50,27 @@ import {
   ledgerWallet
 } from '@rainbow-me/rainbowkit/wallets';
 
+
+import Marquee from './components/sections/Marquee';
+
 const BgSito = styled.div`
-  background: linear-gradient(to bottom, #E56AB3, #F9A3CB);
-  animation: stars 2s ease-out 5s forwards;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #3b82f6, #ec4899);
+  z-index: -1;
 `;
 
-const gradient = "linear-gradient(to bottom, #C76BAD, #DD2476)";
+const ContentWrapper = styled.div`
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 100vh;
+  overflow: auto;
+`;
 
-const stars = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateY(-20%);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(20%);
-  }
-}`;
 
 const Binance: Chain = {
   id: 56,
@@ -129,32 +129,39 @@ function App() {
 
   return (
     <WagmiConfig client={wagmiClient}>
-      <RainbowKitProvider chains={chains} theme={darkTheme({
-        accentColor: '#5700EF',
-        accentColorForeground: 'white',
-        borderRadius: 'small',
-        fontStack: 'system',
-        overlayBlur: 'small',
-      })}>
+      <RainbowKitProvider 
+        chains={chains} 
+        theme={darkTheme({
+          accentColor: '#5700EF',
+          accentColorForeground: 'white',
+          borderRadius: 'small',
+          fontStack: 'system',
+          overlayBlur: 'small',
+        })}
+      >
         <GlobalStyles />
-        <BgSito >
+        <BgSito /> {/* Background fisso */}
+        <ContentWrapper>
           <ThemeProvider theme={light}>
-            <Navigation accounts={accounts} setAccounts={setAccounts}/>
+            <Navigation accounts={accounts} setAccounts={setAccounts} />
             <Home />
+        
             <About />
-            <Token/>
-            <GbccWallet/> 
-            <RoadmapWithImage />
-            <Team2 accounts={accounts} setAccounts={setAccounts}/>
-            <Team />
-            <Faq />
+            <Marquee/>
+            <Token />
+
+     
+
+
+
             <Social />
             <Footer />
           </ThemeProvider>
-        </BgSito>
+        </ContentWrapper>
       </RainbowKitProvider>
     </WagmiConfig>
   );
 }
 
 export default App;
+

@@ -96,7 +96,7 @@ const Footer = () => {
 
 
         <DivTesto>
-          <Testo>© 2023 GBCC. All Rights Reserved.</Testo>
+          <Testo>© 2025 GBCC. All Rights Reserved.</Testo>
         </DivTesto>
 
       </Container>

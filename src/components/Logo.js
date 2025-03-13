@@ -1,7 +1,7 @@
 import * as React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import styled from 'styled-components'
-import Marchio from '../assets/logo/logo1.png';
+import Marchio from './Images/Marchio.png';
 import { useState, useEffect } from 'react'
 const Home = () => {
     return <h2>Home</h2>;
@@ -12,7 +12,7 @@ font-size: ${props => props.theme.fontxxxl};
 color: ${props => props.theme.text};
 transition: all 0.2s ease;
 display: flex;
-
+z-index: 9999; /* Added to bring the image to the front of everything */
 
 &:hover{
     transform: scale(1.1);
@@ -21,10 +21,11 @@ display: flex;
 
 `
 const ImmagineLogo = styled.img`
-width: 200px;
-height: 69px;
+width: 133.33px;
+height: 46.33px;
 display: flex;
 align-items:center;
+z-index: 9999; /* Added to bring the image to the front of everything */
 
 @media (max-width: 20em){
   width: 150px;
@@ -51,9 +52,9 @@ const scrollTo = (id) =>{
   return (
     <LogoText>
         
-            <Link to="/">
+            <Link>
                 
-                <ImmagineLogo src={Marchio} onClick={()=> scrollTo('home')}/>
+                <ImmagineLogo src={Marchio} onClick={()=> scrollTo('Home')}/>
             </Link>
         
 

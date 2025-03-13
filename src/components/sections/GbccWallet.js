@@ -93,11 +93,12 @@ const FloatingImage = styled.div`
 
 
 const Section = styled.section`
-min-height:60vh;
-width: 100vw;
+
+height:100%;
+width: 100%;
 position: relative;
 
-align-items: center;
+align-items: top;
 justify-content: center;
 display: flex;
 
@@ -109,33 +110,20 @@ flex-direction: column;
 `
 
 const Container = styled.div`
-width: 80vw;
-min-height: 60vh;
+width: 100%;
+
 
 
 display: flex;
 justify-content: top;
 align-items:center;
-margin-bottom:10%;
-margin-top:5%;
 
 
-
-@media (max-width: 60em){
-  flex-direction: column-reverse;
-  justify-content: top;
-}
-@media (max-width: 30em){
-
-  min-height: 60vh;
-
-
-}
   
 `
 
 const Box = styled.div`
-width: 50%;
+width: 100%;
 height: 100%;
 display: flex;
 flex-direction: column;
@@ -153,172 +141,6 @@ flex-direction: column;
 }
 `
 
-const ColumnContainer = styled.div`
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end; /* Posiziona il contenuto a destra */
-
-
-
-  @media (max-width: 40em) {
-    width: 80%;
-    margin-bottom: 2rem;
-  }
-`;
-
-const ButtonContainer = styled.div`
-width: 100%;
-display:flex;
-margin-top:2%;
-display:none;
-
-align-items:center;
-justify-content:center;
-@media (max-width: 40em){
-
-display:flex;
-margin-top:0%;
-
-}
-
-`
-const Btn = styled.div`
-
-display: inline-block;
-background-color: #5700EF;
-color: black;
-outline: none;
-border: none;
-font-size: 14px;
-font-family: 'Space Grotesk', sans-serif;
-color: white;
-justify-content: center;
-text-align: center;
-font-weight: 700;
-
-padding: 0.9rem 2.3rem;
-border-radius: 10px;
-cursor: pointer;
-transition: all 0.2s ease;
-position: relative;
-box-shadow: 0 0 10px rgba(0,0,0,0.1);
-&:hover{
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(0,0,0,0.4);
-}
-
-`
-
-const VideoTrailer = styled.img`
-width: 100%;
-height: 100%;
-`
-const Btn2 = styled.div`
-
-display: inline-block;
-
-
-outline: none;
-border: none;
-font-size: 14px;
-font-family: 'Space Grotesk', sans-serif;
-color: white;
-justify-content: center;
-text-align: center;
-
-
-padding: 0.9rem 1rem;
-border-radius: 10px;
-cursor: pointer;
-transition: all 0.2s ease;
-position: relative;
-box-shadow: 0 0 10px rgba(0,0,0,0.1);
-&:hover{
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(0,0,0,0.4);
-}
-
-`
-const Btn3 = styled.div`
-
-display: inline-block;
-
-outline: none;
-border: none;
-font-size: 14px;
-font-family: 'Space Grotesk', sans-serif;
-color: white;
-justify-content: center;
-text-align: center;
-
-
-padding: 0.9rem 1rem;
-border-radius: 10px;
-cursor: pointer;
-transition: all 0.2s ease;
-position: relative;
-box-shadow: 0 0 10px rgba(0,0,0,0.1);
-
-
-`
-const TitleMobile = styled.h2`
-  font-size: 100px;
-  line-height: 1;
-  font-weight: 900;
-display:none;
-  display: none;
-  margin-top: 1%;
-  color: white;
-
-
-  @media (max-width: 60em) {
-margin-bottom:1%;
-display:flex;
-
-    br {
-
-    }
-    text-align: center;
-    font-size: 40px;
-  }
-  @media (max-width: 30em) {
-    br {
-
-    }
-    text-align: center;
-    font-size: 35px;
-  }
-`;
-
-const Title2Mobile = styled.h2`
-  font-size: 50px;
-  line-height: 1;
-  font-weight: 900;
-
-  display: none;
-  margin-top: 2.5%;
-  color: white;
-
-
-  @media (max-width:60em) {
-margin-bottom:4%;
-display:flex;
-    br {
-
-    }
-    text-align: center;
-    font-size: 20px;
-  }
-  @media (max-width: 30em) {
-    br {
-
-    }
-    text-align: center;
-    font-size: 17px;
-  }
-`;
 
 export const Home = () => {
   const [click, setClick] = useState(false);
@@ -336,13 +158,7 @@ export const Home = () => {
   }
 
   return (
-    <Section id="home">
-            <TitleMobile>TG Wallet</TitleMobile>
-            <Title2Mobile>$GBCC Deposit</Title2Mobile>
-
-
-
-        
+    <Section id="home">        
       <Container>
 
         <Box> 
@@ -350,14 +166,6 @@ export const Home = () => {
         </Box>
 
 
-        <ColumnContainer>
-        <FloatingImage>
-        <img src={GbccImage} alt="Angioletto" width="400" height="400"/>
-        <div className="shadow" />
-        </FloatingImage>
-
-          
-        </ColumnContainer>
 
 
 

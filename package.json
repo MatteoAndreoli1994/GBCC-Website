@@ -12,6 +12,7 @@
     "@fontsource/space-mono": "^4.5.12",
     "@fontsource/vt323": "^4.5.10",
     "@rainbow-me/rainbowkit": "^0.8.0",
+    "@splinetool/react-spline": "^4.0.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -22,10 +23,13 @@
     "history": "4.10.1",
     "https-browserify": "^1.0.0",
     "link-react": "^3.0.0",
+    "lucide-react": "^0.479.0",
     "prop-types": "^15.8.1",
+    "rainbow-web-sdk": "^5.0.36-sts",
     "react": "^18.2.0",
     "react-awesome-reveal": "^4.1.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
     "react-router-dom": "^6.14.1",
     "react-scripts": "5.0.1",
     "react-spring": "^9.7.1",
@@ -41,7 +45,7 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject"
-},
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
