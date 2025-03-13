@@ -147,7 +147,11 @@ function App() {
           <ThemeProvider theme={light}>
             <Navigation accounts={accounts} setAccounts={setAccounts} />
             <Home />
+        
 
+
+
+            <Social />
             <Footer />
           </ThemeProvider>
         </ContentWrapper>
