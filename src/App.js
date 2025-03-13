@@ -149,7 +149,7 @@ function App() {
             <Home />
         
             <About />
-
+            <Marquee/>
             <Token />
 
      
