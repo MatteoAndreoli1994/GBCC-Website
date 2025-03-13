@@ -17,8 +17,11 @@ body {
 
 /* Imposta il comportamento per lo sfondo fisso */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
+
 
 html, body {
   overflow: auto;
