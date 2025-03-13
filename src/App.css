@@ -32,14 +32,15 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  /* Rimuovi min-height: 100vh se non è strettamente necessario */
 }
+
 
 .App-link {
   color: #61dafb;

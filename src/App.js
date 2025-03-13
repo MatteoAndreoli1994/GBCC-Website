@@ -145,7 +145,7 @@ function App() {
         <BgSito /> {/* Background fisso */}
         <ContentWrapper>
           <ThemeProvider theme={light}>
-      
+            <Navigation accounts={accounts} setAccounts={setAccounts} />
             <Home />
         
             <About />
