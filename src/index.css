@@ -29,7 +29,4 @@ body::-webkit-scrollbar {
   display: none; /* Nasconde la barra di scorrimento */
 }
 
-/* Se necessario per il debug, prova a vedere se ci sono margini o padding extra */
-* {
-  border: 1px solid red; /* Solo per debug */
-}
+
