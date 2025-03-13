@@ -58,11 +58,10 @@ const BgSito = styled.div`
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100dvh; /* Adattamento per iOS */
+  height: 100vh;
   background: linear-gradient(135deg, #3b82f6, #ec4899);
   z-index: -1;
 `;
-
 
 const ContentWrapper = styled.div`
   position: relative;
@@ -148,7 +147,16 @@ function App() {
             <Navigation accounts={accounts} setAccounts={setAccounts} />
             <Home />
         
+            <About />
+    
+            <Token />
 
+     
+
+
+
+            <Social />
+            <Footer />
           </ThemeProvider>
         </ContentWrapper>
       </RainbowKitProvider>
