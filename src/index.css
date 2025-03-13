@@ -21,6 +21,7 @@ body {
 
 html, body {
   overflow: auto;
+  min-height: 100dvh; /* Usa 100dvh per evitare il bordo bianco */
 }
 
 
