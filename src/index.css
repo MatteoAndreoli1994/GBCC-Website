@@ -26,6 +26,9 @@ body {
 html, body {
   overflow: auto;
 }
+html {
+  overflow-x: hidden;
+}
 
 
 /* Aggiungi una classe per risolvere eventuali bordi bianchi su iOS */
