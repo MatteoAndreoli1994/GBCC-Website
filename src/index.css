@@ -11,7 +11,8 @@ body {
 
   /* Aggiungi overflow nascosto per evitare scorrimenti indesiderati */
   overflow-x: hidden;
-  min-height: 100dvh; /* Usa 100dvh per iOS */
+
+  overflow: auto;
 }
 
 /* Imposta il comportamento per lo sfondo fisso */
@@ -21,7 +22,6 @@ body {
 
 html, body {
   overflow: auto;
-  min-height: 100dvh; /* Usa 100dvh per evitare il bordo bianco */
 }
 
 
