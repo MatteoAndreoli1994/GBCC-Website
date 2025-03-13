@@ -9,7 +9,7 @@ const MobileMenuContainer = styled.div`
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh; /* Usa 100dvh per considerare la UI mobile */
   z-index: 200;
   padding: 120px 30px 30px;
   display: flex;
@@ -22,6 +22,7 @@ const MobileMenuContainer = styled.div`
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
 `;
+
 
 // Wallet section
 const WalletSection = styled.div`
