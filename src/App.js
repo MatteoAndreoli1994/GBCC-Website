@@ -65,6 +65,7 @@ const BgSito = styled.div`
 
 const ContentWrapper = styled.div`
 
+  background-attachment: fixed; /* Rende il gradiente fisso anche durante lo scroll */
   position: relative;
   z-index: 1;
   width: 100%;
