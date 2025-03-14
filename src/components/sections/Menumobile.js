@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
 import { FaChevronRight, FaChevronDown } from 'react-icons/fa';
 import CustomConnectButtonMobile from '../sections/CustomConnectButtonMobile';
@@ -19,15 +19,11 @@ const MobileMenuContainer = styled.div`
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
-
-  /* Impedisce selezione e interazioni di trascinamento */
   user-select: none;
   touch-action: none;
   pointer-events: all;
 `;
 
-
-// Wallet section
 const WalletSection = styled.div`
   margin-bottom: 20px;
   display: flex;
@@ -35,7 +31,6 @@ const WalletSection = styled.div`
   align-items: center;
 `;
 
-// Menu items
 const MenuItemContainer = styled.div`
   padding: 15px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -48,11 +43,10 @@ const MenuItemContainer = styled.div`
   cursor: pointer;
 `;
 
-// Submenu items - now with a smaller font size
 const SubMenuItemContainer = styled.div`
   padding: 12px 0 12px 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 18px; /* Reduced font size for subcategories */
+  font-size: 18px;
   font-weight: bold;
   color: #000;
   display: flex;
@@ -60,7 +54,6 @@ const SubMenuItemContainer = styled.div`
   cursor: pointer;
 `;
 
-// Footer text
 const FooterText = styled.div`
   position: absolute;
   bottom: 30px;
@@ -73,12 +66,28 @@ const FooterText = styled.div`
 const MobileMenuContent = ({ onClose, onNavigate }) => {
   const [showSocialSubmenu, setShowSocialSubmenu] = useState(false);
 
+  useEffect(() => {
+    const disableScroll = (event) => {
+      event.preventDefault();
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("wheel", disableScroll, { passive: false });
+    window.addEventListener("touchmove", disableScroll, { passive: false });
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("wheel", disableScroll);
+      window.removeEventListener("touchmove", disableScroll);
+    };
+  }, []);
+
   const menuItems = [
     { label: "ABOUT", id: "about" },
     { label: "$GBCC", id: "token" },
-    { 
-      label: "SOCIALS", 
-      id: "socials", 
+    {
+      label: "SOCIALS",
+      id: "socials",
       hasSubmenu: true,
       subItems: [
         { label: "TELEGRAM", id: "telegram", url: "https://t.me/GBCCNFT" },
@@ -97,27 +106,19 @@ const MobileMenuContent = ({ onClose, onNavigate }) => {
 
   return (
     <MobileMenuContainer>
-      {/* Connect Wallet section */}
       <WalletSection>
         <CustomConnectButtonMobile />
       </WalletSection>
 
-      {/* Menu items */}
       {menuItems.map((item) => (
         <React.Fragment key={item.id}>
           <MenuItemContainer 
-            onClick={item.hasSubmenu ? 
-              handleSocialsClick : 
-              () => onNavigate(item.id)
-            }
+            onClick={item.hasSubmenu ? handleSocialsClick : () => onNavigate(item.id)}
           >
             {item.label}
-            {item.hasSubmenu && (
-              showSocialSubmenu ? <FaChevronDown /> : <FaChevronRight />
-            )}
+            {item.hasSubmenu && (showSocialSubmenu ? <FaChevronDown /> : <FaChevronRight />)}
           </MenuItemContainer>
           
-          {/* Render submenu items if this item has a submenu and it's expanded */}
           {item.hasSubmenu && showSocialSubmenu && item.subItems.map(subItem => (
             <SubMenuItemContainer
               key={subItem.id}
@@ -129,7 +130,6 @@ const MobileMenuContent = ({ onClose, onNavigate }) => {
         </React.Fragment>
       ))}
 
-      {/* Footer information */}
       <FooterText>
         LICENSE<br />
         TERMS & CONDITIONS<br /><br />
