@@ -288,6 +288,18 @@ const Navigation = () => {
     };
   }, [scrolling]);
 
+  useEffect(() => {
+    if (click) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  
+    return () => {
+      document.body.style.overflow = "auto"; // Resetto quando il componente si smonta
+    };
+  }, [click]);
+
   
   return (
     <Section>
