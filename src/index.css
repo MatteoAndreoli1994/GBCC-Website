@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-
 @font-face {
   font-family: 'comicate';
   src: url('../public/font/COMICATE.TTF') format('truetype');
@@ -43,20 +42,17 @@
   font-weight: normal;
   font-style: normal;
 }
+
 * {
   font-family: 'Inter', sans-serif;
 }
+
 body {
   font-family: 'Inter', sans-serif;
-}
-
-html, body {
-  background: transparent;
+  background: linear-gradient(135deg, #3b82f6, #ec4899); /* Gradiente fisso */
   color: white; /* Per evitare testi invisibili */
   min-height: 100dvh; 
   margin: 0;
   padding: 0;
   overflow-x: hidden;
 }
-
-
