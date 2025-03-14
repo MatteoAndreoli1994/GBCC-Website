@@ -50,5 +50,13 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+html, body {
+  background-color: #121212 !important; /* Imposta uno sfondo scuro per evitare il flash bianco */
+  color: white; /* Per evitare testi invisibili */
+  min-height: 100dvh; 
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 
 
