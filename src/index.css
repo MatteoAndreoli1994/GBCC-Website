@@ -50,10 +50,24 @@
 body {
   font-family: 'Inter', sans-serif;
   background: linear-gradient(135deg, #3b82f6, #ec4899);
-  background-attachment: fixed; /* Rende il gradiente fisso anche durante lo scroll */
+  background-attachment: scroll; /* Cambia il comportamento per evitare il problema su dispositivi mobili */
+  background-size: 100% 100%; /* Imposta il background per occupare l'intero schermo */
   color: white; /* Per evitare testi invisibili */
-  min-height: 100dvh; 
+  min-height: 100dvh;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  position: relative;
+}
+
+/* Aggiungi un elemento pseudo per creare il background fisso */
+body::before {
+  content: '';
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #3b82f6, #ec4899);
+  z-index: -1; /* Metti il background dietro al contenuto */
 }
