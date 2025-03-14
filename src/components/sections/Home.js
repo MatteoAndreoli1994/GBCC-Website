@@ -54,7 +54,7 @@ const Title = styled.h1`
   font-weight: bold;
   line-height: 1;
   display: none;
-  font-family: 'COMICATE'; /* Usa il font Acorn direttamente */
+  font-family: 'comicate'; /* Usa il font Acorn direttamente */
 
   @media (min-width: 768px) {
     font-size: 3rem;
@@ -74,9 +74,9 @@ const Title2 = styled.h1`
   font-size: 2.25rem;
   font-weight: bold;
   line-height: 1;
-  font-family: 'COMICATE'; /* Usa il font Acorn direttamente */
+  font-family: 'comicate'; /* Usa il font Acorn direttamente */
 
-  
+
   @media (min-width: 768px) {
     font-size: 3rem;
   }

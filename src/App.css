@@ -24,6 +24,8 @@
   color: white;
   /* Rimuovi min-height: 100vh se non è strettamente necessario */
 }
+
+
 html, body {
   overflow-x: hidden; /* Nasconde lo scroll orizzontale */
   overflow-y: auto; /* Permette lo scroll verticale */

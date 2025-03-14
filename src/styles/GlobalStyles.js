@@ -3,12 +3,7 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
   /* Importa il font con @font-face */
-  @font-face {
-    font-family: 'COMICATE';
-    src: url('/font/COMICATE.TTF') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
+
 
   /* Reset and global styles */
   *, *::before, *::after {

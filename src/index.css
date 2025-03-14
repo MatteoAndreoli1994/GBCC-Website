@@ -1,26 +1,8 @@
-/* Imposta il corpo con margini zero */
-body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Aggiungi overflow nascosto per evitare scorrimenti indesiderati */
-  overflow-x: hidden;
-  overflow-y: auto;   /* Abilita lo scorrimento verticale */
+@font-face {
+  font-family: 'comicate';
+  src: url('../public/font/COMICATE.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-/* Imposta il comportamento per lo sfondo fisso */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-html {
-  overflow-x: hidden;
-}
-
-/* Aggiungi una classe per risolvere eventuali bordi bianchi su iOS */
-body::-webkit-scrollbar {
-  display: none; /* Nasconde la barra di scorrimento */
-}
