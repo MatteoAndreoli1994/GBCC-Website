@@ -59,7 +59,7 @@ const BgSito = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(135deg, #3b82f6, #ec4899);
+
   z-index: -1;
 `;
 

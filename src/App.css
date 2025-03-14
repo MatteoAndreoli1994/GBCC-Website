@@ -27,8 +27,9 @@
 
 
 html, body {
-
-
+  overflow-x: hidden; /* Nasconde lo scroll orizzontale */
+  background: linear-gradient(135deg, #3b82f6, #ec4899);
+  background-attachment: fixed; /* Rende il gradiente fisso anche durante lo scroll */
   min-height: 100dvh; /* Impedisce il bordo bianco */
 }
 
