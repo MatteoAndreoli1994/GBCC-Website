@@ -28,7 +28,7 @@
 
 html, body {
   overflow-x: hidden; /* Nasconde lo scroll orizzontale */
-  overflow-y: auto; /* Permette lo scroll verticale */
+
   min-height: 100dvh; /* Impedisce il bordo bianco */
 }
 

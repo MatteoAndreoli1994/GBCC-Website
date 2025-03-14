@@ -68,7 +68,7 @@ const ContentWrapper = styled.div`
   z-index: 1;
   width: 100%;
   min-height: 100dvh; /* o usa min-height: 100svh */
-  overflow: auto;
+
 `;
 
 
