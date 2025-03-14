@@ -20,6 +20,14 @@ body {
   font-style: normal;
 }
 
+/* Definisci il font 'porn' */
+@font-face {
+  font-family: 'test'; /* Nome personalizzato per il font */
+  src: url('./font/COMICATE.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Imposta il comportamento per lo sfondo fisso */
 * {
   margin: 0;
