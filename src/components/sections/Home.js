@@ -54,7 +54,7 @@ const Title = styled.h1`
   font-weight: bold;
   line-height: 1;
   display: none;
-  font-family: 'test'; /* Usa il font Acorn direttamente */
+  font-family: 'COMICATE'; /* Usa il font Acorn direttamente */
 
   @media (min-width: 768px) {
     font-size: 3rem;
