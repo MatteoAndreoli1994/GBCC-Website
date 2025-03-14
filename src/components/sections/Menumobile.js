@@ -4,6 +4,7 @@ import { FaChevronRight, FaChevronDown } from 'react-icons/fa';
 import CustomConnectButtonMobile from '../sections/CustomConnectButtonMobile';
 
 // Main container
+// Main container
 const MobileMenuContainer = styled.div`
   position: fixed;
   top: 0;
@@ -19,6 +20,7 @@ const MobileMenuContainer = styled.div`
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
+  overflow-y: auto; /* Permette lo scroll del menu ma non del contenuto sottostante */
 `;
 
 // Wallet section
