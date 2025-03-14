@@ -4,7 +4,6 @@ import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 
 import MainMint from "./MainMint";
-import styled, { keyframes } from "styled-components";
 import { ThemeProvider } from 'styled-components'
 import GlobalStyles from "./styles/GlobalStyles"
 import { light } from "./styles/Themes"
@@ -52,28 +51,6 @@ import {
 
 
 import Marquee from './components/sections/Marquee';
-
-const BgSito = styled.div`
-  position: fixed; /* Fisso */
-  top: 0;
-  left: 0;
-  width: 100%;  /* Copre tutta la larghezza della finestra */
-  height: 100vh; /* Copre tutta l'altezza della finestra */
-  background: linear-gradient(140deg, #3b82f6, #ec4899); /* Gradiente obliquo */
-  z-index: -1;
-`;
-
-const ContentWrapper = styled.div`
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  min-height: 100vh; /* Altezza della finestra per il wrapper */
-  overflow: auto;
-`;
-
-
-
-
 
 const Binance: Chain = {
   id: 56,
@@ -143,28 +120,20 @@ function App() {
         })}
       >
         <GlobalStyles />
-        <BgSito /> {/* Background fisso */}
-        <ContentWrapper>
+        <div className="App"> {/* App Wrapper */}
           <ThemeProvider theme={light}>
             <Navigation accounts={accounts} setAccounts={setAccounts} />
             <Home />
-        
             <About />
-            <Marquee/>
+            <Marquee />
             <Token />
-
-     
-
-
-
             <Social />
             <Footer />
           </ThemeProvider>
-        </ContentWrapper>
+        </div>
       </RainbowKitProvider>
     </WagmiConfig>
   );
 }
 
 export default App;
-

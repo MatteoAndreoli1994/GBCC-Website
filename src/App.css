@@ -1,7 +1,15 @@
-.App {
-  text-align: center;
+html, body {
+  overflow-x: hidden; /* Nasconde lo scroll orizzontale */
+  min-height: 100dvh; /* Impedisce il bordo bianco */
 }
 
+.App {
+  background: linear-gradient(105deg, #3b82f6, #ec4899);
+  min-height: 100vh; /* Imposta il gradiente per l'intera altezza della finestra */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
 
 .App-logo {
   height: 40vmin;
@@ -22,17 +30,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  /* Rimuovi min-height: 100vh se non è strettamente necessario */
 }
-
-
-html, body {
-  overflow-x: hidden; /* Nasconde lo scroll orizzontale */
-
-  min-height: 100dvh; /* Impedisce il bordo bianco */
-}
-
-
 
 .App-link {
   color: #61dafb;
