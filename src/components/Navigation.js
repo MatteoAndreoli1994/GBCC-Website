@@ -288,25 +288,7 @@ const Navigation = () => {
     };
   }, [scrolling]);
 
-  // Aggiungi questo effetto nel componente Navigation
-useEffect(() => {
-  // Quando il menu è aperto, impedisci lo scroll
-  if (click) {
-    document.body.style.overflow = 'hidden';
-    document.body.style.touchAction = 'none'; // Importante per mobile
-  } else {
-    document.body.style.overflow = 'auto';
-    document.body.style.touchAction = 'auto';
-  }
   
-  // Cleanup function per ripristinare le proprietà quando il componente si smonta
-  return () => {
-    document.body.style.overflow = 'auto';
-    document.body.style.touchAction = 'auto';
-  };
-}, [click]);
-
-
   return (
     <Section>
       <Navbar>
