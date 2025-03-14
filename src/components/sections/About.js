@@ -145,7 +145,7 @@ const About = () => {
           />
         </ImageSection>
         <ContentSection>
-          <Title>About Our Vision</Title>
+          <Title>Our Vision</Title>
           <Description>
           Game Boyz Color Club is a NFT collection of 2222 unique digital collectibles on the Binance Smart Chain. Each NFT will allow you to get involved in our fantastic journey! Meet our community and get access to special privileges such as games, reward systems, future projects and collections from our ecosystem!
           </Description>
