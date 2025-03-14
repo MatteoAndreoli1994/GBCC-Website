@@ -49,7 +49,8 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #3b82f6, #ec4899); /* Gradiente fisso */
+  background: linear-gradient(135deg, #3b82f6, #ec4899);
+  background-attachment: fixed; /* Rende il gradiente fisso anche durante lo scroll */
   color: white; /* Per evitare testi invisibili */
   min-height: 100dvh; 
   margin: 0;
