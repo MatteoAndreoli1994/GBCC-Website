@@ -54,24 +54,23 @@ import {
 import Marquee from './components/sections/Marquee';
 
 const BgSito = styled.div`
-  position: fixed;
+  position: fixed; /* Fisso */
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-
+  width: 100%;  /* Copre tutta la larghezza della finestra */
+  height: 100vh; /* Copre tutta l'altezza della finestra */
+  background: linear-gradient(140deg, #3b82f6, #ec4899); /* Gradiente obliquo */
   z-index: -1;
 `;
 
 const ContentWrapper = styled.div`
-  background: linear-gradient(105deg, #3b82f6, #ec4899);
-
   position: relative;
   z-index: 1;
   width: 100%;
-  min-height: 100dvh; /* o usa min-height: 100svh */
+  min-height: 100vh; /* Altezza della finestra per il wrapper */
   overflow: auto;
 `;
+
 
 
 
