@@ -3,22 +3,6 @@
 }
 
 
-@font-face {
-  font-family: "Custom-SpaceMono-Bold";   /*Can be any text*/
-  src: local("SpaceMono-Bold"),
-    url("../src/components/font/SpaceMono-Bold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Custom-Archivo-Bold";   /*Can be any text*/
-  src: local("Archivo-Bold"),
-    url("../src/components/font/Archivo-Bold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Custom-SpaceGrotesk-Bold";   /*Can be any text*/
-  src: local("SpaceGrotesk-SemiBold"),
-    url("../src/components/font/SpaceGrotesk-SemiBold.ttf") format("truetype");
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;

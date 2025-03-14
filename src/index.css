@@ -1,31 +1,12 @@
-/* Imposta il corpo con margini zero e font più compatibile */
+/* Imposta il corpo con margini zero */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 
-    'porn', sans-serif; /* Usa il font 'porn' appena definito */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   /* Aggiungi overflow nascosto per evitare scorrimenti indesiderati */
   overflow-x: hidden;
   overflow-y: auto;   /* Abilita lo scorrimento verticale */
-}
-
-/* Definisci il font 'porn' */
-@font-face {
-  font-family: 'porn'; /* Nome personalizzato per il font */
-  src: url('./font/aporn-3.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* Definisci il font 'porn' */
-@font-face {
-  font-family: 'test'; /* Nome personalizzato per il font */
-  src: url('./font/COMICATE.TTF') format('truetype');
-  font-weight: normal;
-  font-style: normal;
 }
 
 /* Imposta il comportamento per lo sfondo fisso */
