@@ -1,6 +1,15 @@
+// GlobalStyles.js
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
+  /* Importa il font con @font-face */
+  @font-face {
+    font-family: 'COMICATE';
+    src: url('/font/COMICATE.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
   /* Reset and global styles */
   *, *::before, *::after {
     margin: 0;
@@ -21,14 +30,6 @@ const GlobalStyles = createGlobalStyle`
   a {
     color: inherit;
     text-decoration: none;
-  }
-
-  /* Importa il font COMICATE ma non applicarlo globalmente */
-  @font-face {
-    font-family: 'COMICATE';
-    src: url('/font/COMICATE.TTF') format('truetype');
-    font-weight: normal;
-    font-style: normal;
   }
 `;
 
