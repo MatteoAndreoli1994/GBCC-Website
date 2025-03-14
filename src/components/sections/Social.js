@@ -173,7 +173,7 @@ color: black;
 outline: none;
 border: none;
 font-size: 14px;
-font-family: 'Space Grotesk', sans-serif;
+font-family: 'suisse', sans-serif;
 color: white;
 justify-content: center;
 text-align: center;
