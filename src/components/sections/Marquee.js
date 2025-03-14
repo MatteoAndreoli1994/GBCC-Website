@@ -136,9 +136,10 @@ const StatItem = styled.div`
 
 // Title styling using Acorn
 const StatTitle = styled.h2`
-  font-family: 'porn'; /* Usa il font Acorn direttamente */
+  font-family: 'acorn'; /* Usa il font Acorn direttamente */
   font-size: 40px;
   font-weight: bold;
+
   color: #5137AA;
   margin: 0;
   line-height: 1; /* Modifica questa proprietà per regolare l'interlinea */

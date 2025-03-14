@@ -1,8 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+
 @font-face {
   font-family: 'comicate';
   src: url('../public/font/COMICATE.TTF') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'archivio';
+  src: url('../public/font/Archivo-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'spacegrotesk';
+  src: url('../public/font/SpaceGrotesk-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'spacemono';
+  src: url('../public/font/SpaceMono-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'acorn';
+  src: url('../public/font/acorn-3.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'helveticaneue';
+  src: url('../public/font/HelveticaNeue-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  font-family: 'Inter', sans-serif;
+}
+body {
+  font-family: 'Inter', sans-serif;
+}
+
 
 

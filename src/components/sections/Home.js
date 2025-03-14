@@ -54,7 +54,7 @@ const Title = styled.h1`
   font-weight: bold;
   line-height: 1;
   display: none;
-  font-family: 'comicate'; /* Usa il font Acorn direttamente */
+  font-family: 'inter'; /* Usa il font Acorn direttamente */
 
   @media (min-width: 768px) {
     font-size: 3rem;
@@ -74,7 +74,7 @@ const Title2 = styled.h1`
   font-size: 2.25rem;
   font-weight: bold;
   line-height: 1;
-  font-family: 'comicate'; /* Usa il font Acorn direttamente */
+  font-family: 'inter'; /* Usa il font Acorn direttamente */
 
 
   @media (min-width: 768px) {
@@ -92,6 +92,9 @@ const Description = styled.p`
   color: rgba(255, 255, 255, 0.8);
   max-width: 32rem;
   margin: 0 auto;
+  font-family: inter;
+ font-weight: 300; /* Regular, cambia a 300 per Light */
+
 
   @media (min-width: 768px) {
     font-size: 1.25rem;
@@ -283,7 +286,7 @@ function Home() {
             </Title2>
             
             <Description>
-              Meet a very special group of tiny cute Game Boyz Nfts. Trade, collect, and play in a dynamic gaming ecosystem where the adventure never ends!<br></br>Discover the collection.
+              Meet a very special group of tiny cute Game Boyz Nfts. Trade, collect, and play in a dynamic gaming ecosystem where the adventure never ends!
             </Description>
 
             <LogosContainer>

@@ -60,6 +60,9 @@ const MenuItem = styled.li`
   border-radius: 20px;
   transition: all 0.3s ease;
   letter-spacing: 1.5px;
+ font-weight: 500;
+
+  font-family: inter;
 
   &:hover {
     background-color: white;
@@ -201,6 +204,9 @@ const MobileVisibility = styled.div`
 
 const Social = styled.h3`
   margin-left: 20px;
+ font-weight: 500;
+
+  font-family: 'Inter', sans-serif;
 `;
 
 const Navigation = () => {
