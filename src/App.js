@@ -53,24 +53,25 @@ import {
 
 import Marquee from './components/sections/Marquee';
 
+/* Modifica il BgSito */
 const BgSito = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-
+  background: linear-gradient(135deg, #3b82f6, #ec4899);
   z-index: -1;
 `;
 
+/* E rimuovi il gradiente dal ContentWrapper */
 const ContentWrapper = styled.div`
-  background: linear-gradient(135deg, #3b82f6, #ec4899);
-
   position: relative;
   z-index: 1;
   width: 100%;
-  min-height: 100dvh; /* o usa min-height: 100svh */
+  min-height: 100dvh;
   overflow: auto;
+  background: transparent; /* Rimuovi il gradiente da qui */
 `;
 
 
