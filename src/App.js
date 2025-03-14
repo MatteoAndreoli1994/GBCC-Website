@@ -59,7 +59,7 @@ const BgSito = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-
+  background: linear-gradient(135deg, #3b82f6, #ec4899);
   z-index: -1;
 `;
 
@@ -68,9 +68,7 @@ const ContentWrapper = styled.div`
   z-index: 1;
   width: 100%;
   min-height: 100dvh; /* o usa min-height: 100svh */
-height: 100dvh;
-min-height: -webkit-fill-available; /* Fallback per Safari */
-
+  overflow: auto;
 `;
 
 
