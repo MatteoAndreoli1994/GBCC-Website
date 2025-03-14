@@ -7,14 +7,6 @@ const GlobalStyles = createGlobalStyle`
   /* Import Google Fonts */
   @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Grenze+Gotisch&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 
-  /* Import custom Acorn font */
-  @font-face {
-    font-family: 'Acorn';
-    src: url('/fonts/acorn-3.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
 
   /* Reset and global styles */
   *, *::before, *::after {

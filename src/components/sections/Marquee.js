@@ -7,6 +7,8 @@ import Wallet from '../../assets/marquee/wallet.png';
 import Bsc from '../../assets/marquee/bsc.png';
 import Skategbcc from '../../assets/marquee/skategbcc.png';
 
+
+
 // Container for the entire marquee section
 const MarqueeContainer = styled.div`
   position: relative;
@@ -132,9 +134,9 @@ const StatItem = styled.div`
   padding: 0 15px;
 `;
 
-// Title styling using Akorn (via GlobalStyles)
+// Title styling using Acorn
 const StatTitle = styled.h2`
-  font-family: 'Acorn', sans-serif;
+  font-family: 'porn'; /* Usa il font Acorn direttamente */
   font-size: 40px;
   font-weight: bold;
   color: #5137AA;
