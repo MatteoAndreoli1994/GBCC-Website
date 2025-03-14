@@ -64,6 +64,8 @@ const BgSito = styled.div`
 `;
 
 const ContentWrapper = styled.div`
+  background: linear-gradient(135deg, #3b82f6, #ec4899);
+  background-attachment: fixed; /* Rende il gradiente fisso anche durante lo scroll */
   position: relative;
   z-index: 1;
   width: 100%;
