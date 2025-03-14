@@ -14,15 +14,12 @@ const MobileMenuContainer = styled.div`
   padding: 120px 30px 30px;
   display: flex;
   flex-direction: column;
-
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
 `;
-
 
 // Wallet section
 const WalletSection = styled.div`
@@ -45,11 +42,11 @@ const MenuItemContainer = styled.div`
   cursor: pointer;
 `;
 
-// Submenu items - now with the same styling as menu items, just with padding
+// Submenu items - now with a smaller font size
 const SubMenuItemContainer = styled.div`
-  padding: 15px 0 15px 20px;
+  padding: 12px 0 12px 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 22px;
+  font-size: 18px; /* Reduced font size for subcategories */
   font-weight: bold;
   color: #000;
   display: flex;
@@ -89,7 +86,6 @@ const MobileMenuContent = ({ onClose, onNavigate }) => {
   };
 
   const handleSubItemClick = (url) => {
-    // Open the URL in a new tab
     window.open(url, '_blank');
   };
 

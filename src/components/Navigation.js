@@ -62,7 +62,7 @@ const MenuItem = styled.li`
   letter-spacing: 1.5px;
  font-weight: 500;
 
-  font-family: inter;
+  font-family: 'suisse', sans-serif;
 
   &:hover {
     background-color: white;
@@ -204,9 +204,9 @@ const MobileVisibility = styled.div`
 
 const Social = styled.h3`
   margin-left: 20px;
- font-weight: 500;
+ font-weight: 700;
 
-  font-family: 'Inter', sans-serif;
+  font-family: 'suisse', sans-serif;
 `;
 
 const Navigation = () => {
