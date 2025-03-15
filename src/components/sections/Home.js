@@ -9,11 +9,15 @@ import Image4 from '../../assets/social-media-icons/controlcenter.png';
 
 
 const Container = styled.div`
-  min-height: calc(100vh - 13vh);
-  margin-top: 13vh;
+  min-height: 100vh;
+  margin-top: 5vh;
   width: 100%;
   color: white;
   overflow: hidden;
+  background-color:green;
+
+  display:flex;
+  align-items:center;
 `;
 
 const MainContainer = styled.div`
@@ -21,12 +25,15 @@ const MainContainer = styled.div`
   height: 100%;
   padding: 0 3%;
   position: relative;
+
+  background-color:blue;
 `;
 
 const Grid = styled.div`
   display: grid;
   gap: 1rem;
   height: 100%;
+background-color:gray;
 
   @media (min-width: 1024px) {
     grid-template-columns: 1fr 1fr;
@@ -144,6 +151,7 @@ const ImageSection = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color:orange;
 
   @media (min-width: 1024px) {
     order: 2;
@@ -152,11 +160,12 @@ const ImageSection = styled.div`
 
 const ImageContainer = styled.div`
   width: 100%;
-  max-height: calc(87vh - 6rem);
+
   aspect-ratio: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+
 
   @media (max-width: 1024px) {
     max-width: 40%;
