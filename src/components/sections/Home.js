@@ -9,13 +9,21 @@ import Image4 from '../../assets/social-media-icons/controlcenter.png';
 
 const Container = styled.div`
   min-height: 100vh;
-  margin-top: 5vh;
+
   width: 100%;
   color: white;
   overflow: hidden;
-  background-color: green;
+
   display: flex;
   align-items: center;
+
+
+    @media (max-width: 1200px) {
+    margin-top: 5vh;
+
+  }
+
+
 `;
 
 const MainContainer = styled.div`
@@ -23,7 +31,7 @@ const MainContainer = styled.div`
   min-height: 90vh;
   padding: 0 3%;
   position: relative;
-  background-color: yellow;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -31,13 +39,15 @@ const MainContainer = styled.div`
 
 const Grid = styled.div`
   display: grid;
-  gap: 1rem;
+  gap: 0rem;
   height: 100%;
-  background-color: gray;
+
+align-items:center;
   
   @media (min-width: 768px) and (max-width: 1023px) {
     min-height: 80vh;
     grid-template-rows: auto 1fr;
+      gap: 1rem;
   }
 
   @media (min-width: 1024px) {
@@ -54,6 +64,8 @@ const TextSection = styled.div`
   text-align: center;
   padding: 2rem 0;
 
+
+height:80%;
   @media (min-width: 768px) and (max-width: 1023px) {
     padding-top: 1rem;
   }
@@ -82,7 +94,7 @@ const Title = styled.h1`
   }
 
   @media (min-width: 1024px) {
-    font-size: 4.5rem;
+    font-size: 4rem;
     display: block;
   }
 `;
@@ -159,7 +171,7 @@ const ImageSection = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: orange;
+
   padding: 2rem 0;
 
   @media (min-width: 768px) and (max-width: 1023px) {
@@ -201,7 +213,9 @@ const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: contain;
-  background-color: blue;
+
+
+
 `;
 
 const Img1 = styled.img`
