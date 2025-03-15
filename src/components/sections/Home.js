@@ -169,8 +169,10 @@ const ImageContainer = styled.div`
 
 const Image = styled.img`
   width: 100%;
-  height: 100%;
+
   object-fit: cover;
+
+  max-width:700px;
 `;
 
 const Img1 = styled.img`
