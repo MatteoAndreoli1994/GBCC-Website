@@ -15,6 +15,13 @@ const MarqueeContainer = styled.div`
   width: 100%;
   overflow: hidden;
   padding: 35px 0;
+
+
+    @media (max-width: 375px) {
+
+
+  padding: 25px 0;
+  }
 `;
 
 // Background images styling
@@ -153,6 +160,10 @@ const StatTitle = styled.h2`
   @media (max-width: 768px) {
     font-size: 24px; /* Ancora più piccolo su schermi piccoli */
   }
+
+    @media (max-width: 375px) {
+    font-size: 20px; /* Ancora più piccolo su schermi piccoli */
+  }
 `;
 
 // Subtitle styling using Inter (via Google Fonts in GlobalStyles)
@@ -170,6 +181,10 @@ const StatSubtitle = styled.p`
 
   @media (max-width: 768px) {
     font-size: 16px; /* Ancora più piccolo su schermi piccoli */
+  }
+
+  @media (max-width: 375px) {
+  font-size: 12px; /* Ancora più piccolo su schermi piccoli */
   }
 `;
 

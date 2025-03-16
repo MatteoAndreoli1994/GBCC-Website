@@ -4,14 +4,17 @@ import styled from 'styled-components';
 import Game from '../../assets/elements/thread.png';
 
 const Container = styled.div`
-  height: auto;
+  min-height: 70vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem 0;
 
+  @media (max-width: 1024px) {
+  min-height: auto;
 
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -114,6 +117,11 @@ const Description = styled.p`
   @media (min-width: 1024px) {
     font-size: 1.25rem;
     max-width: 32rem;
+  }
+      @media (max-width: 320px) {
+  width:100%;
+
+  font-size:16px;
   }
 `;
 
