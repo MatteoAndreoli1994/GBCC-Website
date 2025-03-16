@@ -136,7 +136,7 @@ export function CoinDescription() {
           <IconButton href="https://pancakeswap.finance/?outputCurrency=0x3580F19068a264548D6816BDE5942693Eed95dc1" target="_blank" rel="noopener noreferrer">
             <PancakeImage src={Pancake} alt="PancakeSwap" />
           </IconButton>
-          <IconButton href="https://gbcc-deployer.gitbook.io/game-boyz-color-club-whitepaper/game-boyz-color-token" target="_blank" rel="noopener noreferrer">
+          <IconButton href="https://gbcc-deployer.gitbook.io/game-boyz-color-club/usdgbcc-token" target="_blank" rel="noopener noreferrer">
             <GitbookImage src={Gitbook} alt="GitBook" />
           </IconButton>
         </ButtonContainer>
