@@ -1779,7 +1779,7 @@ async function infoGBCC(id){
 
             </>  
             ) :
-            (<Testo>YOU MUST BE CONNECTED </Testo>)
+            (<Testo>CONNECT YOUR WALLET </Testo>)
               
           }
               </>):
@@ -1882,7 +1882,7 @@ async function infoGBCC(id){
 
             </>  
             ) :
-            (<Testo>YOU MUST BE CONNECTED </Testo>)
+            (<Testo>CONNECT YOUR WALLET </Testo>)
               
           }
               </>):
@@ -1895,7 +1895,7 @@ async function infoGBCC(id){
 
           </>  
             ) :
-            (<Testo>YOU MUST BE CONNECTED </Testo>)
+            (<Testo>CONNECT YOUR WALLET</Testo>)
               
           }
 
