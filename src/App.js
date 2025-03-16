@@ -151,7 +151,7 @@ function App() {
             <Social />
      
 
-
+        <Footer/>
 
 
           </ThemeProvider>
