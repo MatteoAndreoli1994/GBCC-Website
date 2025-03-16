@@ -185,7 +185,7 @@ font-family: 'suisse', sans-serif;
 color: white;
 justify-content: center;
 text-align: center;
-font-weight: 700;
+font-weight: 500;
 align-items:center;
 padding: 0.9rem 2.3rem;
 border-radius: 10px;
