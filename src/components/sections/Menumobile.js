@@ -34,24 +34,40 @@ const WalletSection = styled.div`
 const MenuItemContainer = styled.div`
   padding: 15px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 22px;
+  font-size: 20px; /* Default */
   font-weight: bold;
   color: #000;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+
+  @media (max-width: 480px) { /* Telefono piccolo */
+    font-size: 18px;
+  }
+
+  @media (max-width: 360px) { /* Telefono molto piccolo */
+    font-size: 16px;
+  }
 `;
 
 const SubMenuItemContainer = styled.div`
   padding: 12px 0 12px 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 18px;
+  font-size: 18px; /* Default */
   font-weight: bold;
   color: #000;
   display: flex;
   align-items: center;
   cursor: pointer;
+
+  @media (max-width: 480px) { /* Telefono piccolo */
+    font-size: 16px;
+  }
+
+  @media (max-width: 360px) { /* Telefono molto piccolo */
+    font-size: 14px;
+  }
 `;
 
 const FooterText = styled.div`
@@ -59,9 +75,18 @@ const FooterText = styled.div`
   bottom: 30px;
   left: 30px;
   color: #777;
-  font-size: 12px;
+  font-size: 12px; /* Default */
   line-height: 1.5;
+
+  @media (max-width: 480px) { /* Telefono piccolo */
+    font-size: 10px;
+  }
+
+  @media (max-width: 360px) { /* Telefono molto piccolo */
+    font-size: 9px;
+  }
 `;
+
 
 const MobileMenuContent = ({ onClose, onNavigate }) => {
   const [showSocialSubmenu, setShowSocialSubmenu] = useState(false);
