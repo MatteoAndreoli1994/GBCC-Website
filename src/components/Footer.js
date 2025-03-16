@@ -77,7 +77,7 @@ margin: 2rem;
 const Testo = styled.h4`
 font-size: 14px;
 font-family: 'suisse', sans-serif;
-font-weight: 600;
+font-weight: 400;
 color: white;
 justify-content: center;
 text-align: center;
