@@ -49,21 +49,25 @@ import {
 import Marquee from './components/sections/Marquee';
 
 const BgSito = styled.div`
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  background: linear-gradient(110deg, #3b82f6, #ec4899);
-  background-attachment: fixed;
+
+  background: linear-gradient(120deg, #3b82f6, #ec4899);
+  
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  overflow: hidden;
 `;
 
 const ContentWrapper = styled.div`
   position: relative;
   z-index: 1;
   width: 100%;
-  min-height: 100vh; /* Mantiene il contenuto in tutta la viewport */
+  min-height: 100vh;
   overflow: auto;
 `;
 
