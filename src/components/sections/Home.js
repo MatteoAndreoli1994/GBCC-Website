@@ -242,7 +242,15 @@ const Image = styled.img`
   object-fit: contain;
 
   @media (min-width: 1024px) {
-    max-width: 700px;
+    max-width: 600px;
+  }
+
+    @media (max-height: 750px) {
+    max-width: 500px;
+  }
+
+      @media (max-height: 700px) {
+    max-width: 400px;
   }
 `;
 
