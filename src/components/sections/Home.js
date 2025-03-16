@@ -16,6 +16,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+
+
+
 `;
 
 const MainContainer = styled.div`
@@ -25,6 +29,10 @@ const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
+
+
+
+
 `;
 
 const Grid = styled.div`
@@ -33,9 +41,16 @@ const Grid = styled.div`
   height: 100%;
   align-items: center;
 
+
+
   @media (max-width: 1023px) {
     min-height: calc(100vh - 13vh);
     padding-bottom: 4rem;
+  }
+
+  @media (max-width: 414px) {
+ 
+ 
   }
 
   @media (min-width: 1024px) {
@@ -52,6 +67,7 @@ const TextSection = styled.div`
   text-align: center;
 
 
+
   @media (max-width: 1023px) {
     padding: 0 1rem;
   }
@@ -62,6 +78,13 @@ const TextSection = styled.div`
     text-align: left;
   
   }
+
+  @media (max-width: 320px) {
+  width:100%;
+
+      padding: 0rem;
+  }
+
 `;
 
 const Title = styled.h1`
@@ -83,6 +106,7 @@ const Title2 = styled.h1`
   line-height: 1;
   font-family: 'inter';
 
+
   @media (min-width: 768px) and (max-width: 1023px) {
     font-size: 3.5rem;
   }
@@ -90,6 +114,12 @@ const Title2 = styled.h1`
   @media (min-width: 1024px) {
     display: none;
   }
+
+    @media (max-width: 320px) {
+  font-size: 32px;
+  }
+
+
 `;
 
 const Description = styled.p`
@@ -111,6 +141,12 @@ const Description = styled.p`
     font-size: 1.5rem;
     line-height: 1.5;
   }
+
+  @media (max-width: 320px) {
+  width:100%;
+
+  font-size:16px;
+  }
 `;
 
 const LogosContainer = styled.div`
@@ -127,6 +163,10 @@ const LogosContainer = styled.div`
   @media (min-width: 1024px) {
     justify-content: flex-start;
   }
+
+    @media (max-width: 320px) {
+  gap: 1rem;
+  }
 `;
 
 const LogoBox = styled.div`
@@ -138,12 +178,21 @@ const LogoBox = styled.div`
   justify-content: center;
   transition: background-color 0.2s;
   cursor: pointer;
+
+
+  @media (max-width: 320px){
+  height: 3rem;
+
+  }
 `;
 
 const Divider = styled.div`
   width: 1px;
   height: 2rem;
   background: rgba(255, 255, 255, 0.2);
+
+
+
 `;
 
 const ImageSection = styled.div`
@@ -153,6 +202,8 @@ const ImageSection = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+
 
 
   @media (max-width: 1023px) {
@@ -206,6 +257,11 @@ const Img1 = styled.img`
 
   @media (min-width: 768px) and (max-width: 1023px) {
     width: 50px;
+  }
+
+  @media (max-width: 320px){
+
+
   }
 `;
 

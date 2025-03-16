@@ -17,6 +17,8 @@ const Section = styled.nav`
   top: 0;
   z-index: 100;
 
+
+
 `;
 
 const Navbar = styled.section`
@@ -25,10 +27,18 @@ const Navbar = styled.section`
   align-items: center;
   width: 100%;
   padding: 3%;
-  height: ${props => props.theme.navHeight};
+  height: 100%;
+
+
 
   @media (max-width: 40em) {
     width: 90%;
+  }
+
+
+  @media (max-width: 320px) {
+  padding: 0%;
+ 
   }
 `;
 

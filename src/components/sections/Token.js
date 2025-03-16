@@ -17,7 +17,10 @@ const Section = styled.section`
   padding: 1rem 0;
 
 
+  @media (max-width: 1024px) {
+  min-height: auto;
 
+  }
 `;
 
 const Title = styled.h1`
@@ -58,6 +61,13 @@ const Container = styled.div`
     width: 90%;
     padding: 1.5rem 0;
   }
+
+    @media (max-width: 414px) {
+
+    width: 95%;
+
+
+  }
 `;
 
 const BoxesContainer = styled.div`
@@ -79,6 +89,8 @@ const BoxesContainer = styled.div`
     flex-direction: column;
     gap: 3rem;
   }
+
+
 `;
 
 const Box = styled.div`
@@ -93,6 +105,8 @@ const Box = styled.div`
   @media (max-width: 768px) {
     width: 100%;
   }
+
+
 `;
 
 const BoxRight = styled.div`

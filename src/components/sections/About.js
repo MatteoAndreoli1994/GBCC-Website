@@ -4,12 +4,13 @@ import styled from 'styled-components';
 import Game from '../../assets/elements/thread.png';
 
 const Container = styled.div`
-  min-height: 80vh;
+  height: auto;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem 0;
+
 
 `;
 
@@ -25,6 +26,13 @@ const ContentWrapper = styled.div`
     flex-direction: row;
     align-items: center;
     gap: 3rem;
+  }
+
+    @media (max-width: 414px) {
+
+     gap: 0rem;
+
+       width: 95%;
   }
 `;
 

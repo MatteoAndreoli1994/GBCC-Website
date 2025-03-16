@@ -17,6 +17,12 @@ justify-content: center;
 align-items: center;
 
 overflow: hidden;
+
+
+  @media (max-width: 1024px) {
+  min-height: auto;
+
+  }
 `
 const Container = styled.div`
 width: 75%;
