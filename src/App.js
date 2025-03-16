@@ -148,7 +148,7 @@ function App() {
             <About />
             <Marquee/>
             <Token />
-
+            <Social />
      
 
 
