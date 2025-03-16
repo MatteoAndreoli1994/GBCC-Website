@@ -145,6 +145,7 @@ function App() {
             <Navigation accounts={accounts} setAccounts={setAccounts} />
             <Home />
         
+            <About />
 
           </ThemeProvider>
         </ContentWrapper>
