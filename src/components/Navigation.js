@@ -218,6 +218,36 @@ const Social = styled.h3`
 
   font-family: 'suisse', sans-serif;
 `;
+const StakingButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15); /* Sfondo semi-trasparente */
+  color:rgb(255, 255, 255); /* Testo colorato */
+  font-weight: 600;
+  font-family: 'suisse', sans-serif;
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.4); /* Bordo trasparente */
+  backdrop-filter: blur(12px); /* Effetto blur */
+  -webkit-backdrop-filter: blur(12px); /* Safari support */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Leggera ombra */
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.25); /* Più chiaro al passaggio mouse */
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+
+  @media (max-width: 60em) {
+    display: none;
+  }
+`;
+
+
 
 const Navigation = () => {
   const [click, setClick] = useState(false);
@@ -316,28 +346,40 @@ const Navigation = () => {
       <Navbar>
         <Logo style={{ zIndex: 9999 }} />
         <Menu ref={menuRef}>
-          <MenuItem onClick={() => scrollTo('about')}>ABOUT</MenuItem>
-          <MenuItem onClick={() => scrollTo('token')}>$GBCC</MenuItem>
-          <SocialMenuItem 
-            onClick={() => setShowSocialDropdown(!showSocialDropdown)}
-            show={showSocialDropdown}
-          >
-            SOCIALS
-            <SocialDropdown ref={socialDropdownRef} show={showSocialDropdown}>
-              <a href="https://x.com/GBCCNFT" target="_blank" rel="noopener noreferrer">
-                <FaTwitter style={{ color: 'black', fontSize: 'larger' }} />
-                <Social>X.COM</Social>
-              </a>
-              <a href="https://t.me/GBCCNFT" target="_blank" rel="noopener noreferrer">
-                <FaTelegramPlane style={{ color: 'black', fontSize: 'larger' }} />
-                <Social>TELEGRAM</Social>
-              </a>
-            </SocialDropdown>
-          </SocialMenuItem>
-          <MobileVisibility>
-            <ConnectButton showBalance={false} />
-          </MobileVisibility>
-        </Menu>
+        <MenuItem onClick={() => scrollTo('about')}>ABOUT</MenuItem>
+        <MenuItem onClick={() => scrollTo('token')}>$GBCC</MenuItem>
+
+
+
+        <SocialMenuItem 
+          onClick={() => setShowSocialDropdown(!showSocialDropdown)}
+          show={showSocialDropdown}
+        >
+          SOCIALS
+          <SocialDropdown ref={socialDropdownRef} show={showSocialDropdown}>
+            <a href="https://x.com/GBCCNFT" target="_blank" rel="noopener noreferrer">
+              <FaTwitter style={{ color: 'black', fontSize: 'larger' }} />
+              <Social>X.COM</Social>
+            </a>
+            <a href="https://t.me/GBCCNFT" target="_blank" rel="noopener noreferrer">
+              <FaTelegramPlane style={{ color: 'black', fontSize: 'larger' }} />
+              <Social>TELEGRAM</Social>
+            </a>
+          </SocialDropdown>
+        </SocialMenuItem>
+
+        <StakingButton 
+          href="https://www.gameboyzcolorclub.com/leveling" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          STAKING
+        </StakingButton>
+        <MobileVisibility>
+          <ConnectButton showBalance={false} />
+        </MobileVisibility>
+      </Menu>
+
 
         {click && (
           <MobileMenu>

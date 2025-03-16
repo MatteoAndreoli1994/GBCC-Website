@@ -85,6 +85,7 @@ const MobileMenuContent = ({ onClose, onNavigate }) => {
   const menuItems = [
     { label: "ABOUT", id: "about" },
     { label: "$GBCC", id: "token" },
+    { label: "STAKING", id: "staking" },
     {
       label: "SOCIALS",
       id: "socials",
@@ -104,39 +105,47 @@ const MobileMenuContent = ({ onClose, onNavigate }) => {
     window.open(url, '_blank');
   };
 
+  const handleItemClick = (item) => {
+    if (item.id === "staking") {
+      window.open("https://www.gameboyzcolorclub.com/leveling", "_blank");
+    } else {
+      onNavigate(item.id);
+    }
+  };
+
   return (
     <MobileMenuContainer>
-      <WalletSection>
-        <CustomConnectButtonMobile />
-      </WalletSection>
+    <WalletSection>
+      <CustomConnectButtonMobile />
+    </WalletSection>
 
-      {menuItems.map((item) => (
-        <React.Fragment key={item.id}>
-          <MenuItemContainer 
-            onClick={item.hasSubmenu ? handleSocialsClick : () => onNavigate(item.id)}
+    {menuItems.map((item) => (
+      <React.Fragment key={item.id}>
+        <MenuItemContainer
+          onClick={item.hasSubmenu ? handleSocialsClick : () => handleItemClick(item)}
+        >
+          {item.label}
+          {item.hasSubmenu && (showSocialSubmenu ? <FaChevronDown /> : <FaChevronRight />)}
+        </MenuItemContainer>
+
+        {item.hasSubmenu && showSocialSubmenu && item.subItems.map(subItem => (
+          <SubMenuItemContainer
+            key={subItem.id}
+            onClick={() => handleSubItemClick(subItem.url)}
           >
-            {item.label}
-            {item.hasSubmenu && (showSocialSubmenu ? <FaChevronDown /> : <FaChevronRight />)}
-          </MenuItemContainer>
-          
-          {item.hasSubmenu && showSocialSubmenu && item.subItems.map(subItem => (
-            <SubMenuItemContainer
-              key={subItem.id}
-              onClick={() => handleSubItemClick(subItem.url)}
-            >
-              {subItem.label}
-            </SubMenuItemContainer>
-          ))}
-        </React.Fragment>
-      ))}
+            {subItem.label}
+          </SubMenuItemContainer>
+        ))}
+      </React.Fragment>
+    ))}
 
-      <FooterText>
-        LICENSE<br />
-        TERMS & CONDITIONS<br /><br />
-        MATTEO LABS, INC © 2025<br />
-        MADE IN ITALY, IT<br />
-      </FooterText>
-    </MobileMenuContainer>
+    <FooterText>
+      LICENSE<br />
+      TERMS & CONDITIONS<br /><br />
+      MATTEO LABS, INC © 2025<br />
+      MADE IN ITALY, IT<br />
+    </FooterText>
+  </MobileMenuContainer>
   );
 };
 

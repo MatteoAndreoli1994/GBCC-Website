@@ -3,28 +3,24 @@ import { useState } from 'react';
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 
-import MainMint from "./MainMint";
+
 import styled, { keyframes } from "styled-components";
 import { ThemeProvider } from 'styled-components'
 import GlobalStyles from "./styles/GlobalStyles"
 import { light } from "./styles/Themes"
-import { dark } from "./styles/Themes"
+
 
 import Home from "./components/sections/Home";
 import About from "./components/sections/About";
 import Token from "./components/sections/Token";
-import GbccWallet from "./components/sections/GbccWallet";
+
 import Social from "./components/sections/Social";
-import RoadmapWithImage from "./components/sections/RoadmapWithImage";
-import Showcase from "./components/sections/Showcase";
-import Team from "./components/sections/Team";
-import Team2 from "./Team2";
-import Faq from "./components/sections/Faq";
+
 import Footer from "./components/Footer";
 import Navigation from "./components/Navigation";
-import Blog from './pages/BlockPages';
+
 import '@rainbow-me/rainbowkit/styles.css'; 
-import { ConnectButton } from '@rainbow-me/rainbowkit';
+
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc';
 import {
   getDefaultWallets,
@@ -38,8 +34,7 @@ import {
   createClient,
   WagmiConfig,
 } from 'wagmi';
-import { alchemyProvider } from 'wagmi/providers/alchemy';
-import { publicProvider } from 'wagmi/providers/public';
+
 import { connectorsForWallets } from '@rainbow-me/rainbowkit';
 import {
   metaMaskWallet,
