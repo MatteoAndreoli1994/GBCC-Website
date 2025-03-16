@@ -49,28 +49,27 @@ import {
 import Marquee from './components/sections/Marquee';
 
 const BgSito = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
+  background: linear-gradient(120deg, #3b82f6, #ec4899);
   z-index: -1;
 
-  background: linear-gradient(120deg, #3b82f6, #ec4899);
-  
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  overflow: hidden;
 `;
 
 const ContentWrapper = styled.div`
+
+
   position: relative;
   z-index: 1;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100dvh; /* o usa min-height: 100svh */
   overflow: auto;
 `;
-
 
 
 
