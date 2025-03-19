@@ -102,7 +102,6 @@ const CenteredContainer = styled.div`
   justify-content: center;
 
 
-
 `;
 
 const Title = styled.h1`
@@ -114,7 +113,7 @@ const Title = styled.h1`
   @media (max-width: 40em) { font-size: 28px; }
   @media (max-width: 36em) { font-size: 27px; }
   @media (max-width: 30em) {
-    margin-top: 40vh;
+
     font-size: 20px;
   }
 `;
