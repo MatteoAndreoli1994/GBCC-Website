@@ -89,7 +89,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
 
-  background-color:red;
+
 
   flex-direction:column;
 `;
@@ -226,6 +226,8 @@ display:flex;
 align-items:center;
 
 justify-content:flex-end;
+position: absolute;
+top:0;
 
 
 `;
