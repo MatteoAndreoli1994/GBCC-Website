@@ -89,6 +89,8 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
 
+  background-color:red;
+
   flex-direction:column;
 `;
 
@@ -97,13 +99,15 @@ const CenteredContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+
+
 
 `;
 
 const Title = styled.h1`
   font-size: 36px;
-  margin-top: 30vh;
+ 
   animation: ${rainbow} 3s linear infinite;
 
   @media (max-width: 64em) { font-size: 30px; }
@@ -214,7 +218,7 @@ const PopupContainer = styled.div`
 // Stili per il popup
 const Navbar = styled.div`
 width:95%;
-height:100px;
+height:10%;
 
 
 display:flex;
@@ -256,6 +260,7 @@ const PopupCloseButton = styled.button`
   margin: 20px auto 0;
   font-family: "Press Start 2P", cursive;
 `;
+
 
 function Add() {
   // Indirizzo del contratto
@@ -339,7 +344,7 @@ function Add() {
           <CenteredContainer>
             {/* Il ConnectButton di RainbowKit gestisce internamente la connessione */}
 
-
+            
             {isConnected ? (
               <>
                 <Title>Insert your Telegram ID</Title>
@@ -356,7 +361,7 @@ function Add() {
                   <Button onClick={handleCheck}>Check</Button>
                 </ContainerButton>
                 <ContainerButton2>
-                ⚠️To submit an address, you must have at least 1 GBCC. <br/>
+                ⚠️To submit an address, you must have at least 1 GBCC Nft. <br/>
                 💡Click Check to view all addresses associated with your ID.
                 </ContainerButton2>
                 {showPopup && (
