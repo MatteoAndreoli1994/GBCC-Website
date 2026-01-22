@@ -4,6 +4,7 @@ import Pancake from '../../assets/social-media-icons/pancakeswap-cake-logo.svg';
 import Gitbook from '../../assets/social-media-icons/gitbook.png';
 import Coin from '../../assets/social-media-icons/coin.png';
 
+
 const Container = styled.div`
   max-width: 1000px;
   margin: 0 auto;
@@ -46,7 +47,7 @@ const Content = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 26px;
+  font-size: 16px;
   font-weight: 700;
   color: white;
   margin: 0;
@@ -58,7 +59,7 @@ const Title = styled.h1`
 
 
   @media (min-width: 768px) {
-    font-size: 48px;
+    font-size: 32px;
   }
 `;
 
@@ -128,15 +129,18 @@ export function CoinDescription() {
   return (
     <Container>
       <Content>
-        <Title>$GBCC</Title>
-        <Description>
-        Game Boyz Color Coin is the main currency of the GBCC ecosystem. It’s a fun mix of meme coin vibes and real value, rewarding NFT holders, gamers, and traders. Earn $GBCC through games, contests, and activity in the community. Use it for payments, future collections, and cool tools. Plus, small transaction fees help grow the treasury and reward our active members.
+        <Title>A New Standard for trading</Title>
+        <Description>     
+        L-NE is a decentralized peer-to-peer NFT marketplace designed to enable direct, trustless, and flexible exchanges between users.
+It introduces advanced swap mechanics that go beyond traditional buy/sell models, allowing NFTs and tokens to be exchanged atomically without intermediaries.
+GBCC is a founding collection of the L-NE ecosystem.
+The $GBCC token powers the initial liquidity of L-NE and serves as the economic bridge between the GBCC collection and the marketplace infrastructure.
         </Description>
         <ButtonContainer>
-          <IconButton href="https://pancakeswap.finance/?outputCurrency=0x3580F19068a264548D6816BDE5942693Eed95dc1" target="_blank" rel="noopener noreferrer">
+          <IconButton href="https://pancakeswap.finance/swap?chain=bsc&outputCurrency=0x3580F19068a264548D6816BDE5942693Eed95dc1" target="_blank" rel="noopener noreferrer">
             <PancakeImage src={Pancake} alt="PancakeSwap" />
           </IconButton>
-          <IconButton href="https://gbcc-deployer.gitbook.io/game-boyz-color-club/usdgbcc-token" target="_blank" rel="noopener noreferrer">
+          <IconButton href="https://game-boyz-color-club.gitbook.io/game-boyz-color-club-docs/l_ne" target="_blank" rel="noopener noreferrer">
             <GitbookImage src={Gitbook} alt="GitBook" />
           </IconButton>
         </ButtonContainer>

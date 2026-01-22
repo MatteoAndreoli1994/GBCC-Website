@@ -407,7 +407,7 @@ function Home() {
           </ImageSection>
         </Grid>
 
-        <ProfileButton href="https://x.com/Matteo01273732" target="_blank" rel="noopener noreferrer">
+        <ProfileButton href="https://x.com/Matteox0x0" target="_blank" rel="noopener noreferrer">
           <ProfileImage />
           <ProfileInfo>
             <ProfileName>matteo.lab</ProfileName>
