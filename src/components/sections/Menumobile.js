@@ -109,7 +109,7 @@ const MobileMenuContent = ({ onClose, onNavigate }) => {
 
   const menuItems = [
     { label: "ABOUT", id: "about" },
-    { label: "$GBCC", id: "token" },
+    { label: "L-NE", id: "token" },
     { label: "STAKING", id: "staking" },
     {
       label: "SOCIALS",
