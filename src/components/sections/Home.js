@@ -335,6 +335,11 @@ const ProfileName = styled.div`
   font-weight: bold;
 `;
 
+const ProfileRole = styled.div`
+  font-size: 0.875rem;
+  color: #6b7280;
+`;
+
 function Home() {
   return (
     <Container id="Home">
@@ -381,7 +386,8 @@ function Home() {
         <ProfileButton>
           <ProfileImage />
           <ProfileInfo>
-            <ProfileName>Created By Matteo</ProfileName>
+            <ProfileRole>Created By</ProfileRole>
+            <ProfileName>Matteo</ProfileName>
           </ProfileInfo>
         </ProfileButton>
       </MainContainer>
