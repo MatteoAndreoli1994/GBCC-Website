@@ -312,7 +312,19 @@ const ProfileButton = styled.div`
   align-items: center;
   gap: 0.75rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
   z-index: 9999;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.2);
+    background: #f8f8f8;
+  }
+  
+  &:active {
+    transform: scale(0.95);
+    box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.15);
+  }
 `;
 
 const ProfileImage = styled.div`
@@ -321,14 +333,24 @@ const ProfileImage = styled.div`
   background: linear-gradient(to bottom right, #a855f7, #6366f1);
   border-radius: 9999px;
   flex-shrink: 0;
+  transition: transform 0.3s ease;
   background-image: url(${Image4});
   background-size: cover;
   background-position: center;
+  
+  ${ProfileButton}:hover & {
+    transform: rotate(10deg);
+  }
 `;
 
 const ProfileInfo = styled.div`
   color: black;
   padding-right: 0.75rem;
+  transition: transform 0.2s ease;
+  
+  ${ProfileButton}:hover & {
+    transform: translateX(2px);
+  }
 `;
 
 const ProfileName = styled.div`
