@@ -12,7 +12,6 @@ import { light } from "./styles/Themes"
 
 import Home from "./components/sections/Home";
 import About from "./components/sections/About";
-import Token from "./components/sections/Token";
 
 import Social from "./components/sections/Social";
 
@@ -147,7 +146,6 @@ function App() {
         
             <About />
             <Marquee/>
-            <Token />
             <Social />
      
 

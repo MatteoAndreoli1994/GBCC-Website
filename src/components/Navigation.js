@@ -347,7 +347,6 @@ const Navigation = () => {
         <Logo style={{ zIndex: 9999 }} />
         <Menu ref={menuRef}>
         <MenuItem onClick={() => scrollTo('about')}>ABOUT</MenuItem>
-        <MenuItem onClick={() => scrollTo('token')}>L-NE</MenuItem>
 
 
 
