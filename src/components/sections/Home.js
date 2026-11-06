@@ -301,7 +301,7 @@ const Img3 = styled.img`
   }
 `;
 
-const ProfileButton = styled.a`
+const ProfileButton = styled.div`
   position: fixed;
   bottom: 1rem;
   right: 3%;
@@ -312,21 +312,7 @@ const ProfileButton = styled.a`
   align-items: center;
   gap: 0.75rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.3s ease;
   z-index: 9999;
-  
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.2);
-    background: #f8f8f8;
-  }
-  
-  &:active {
-    transform: scale(0.95);
-    box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.15);
-  }
 `;
 
 const ProfileImage = styled.div`
@@ -335,33 +321,18 @@ const ProfileImage = styled.div`
   background: linear-gradient(to bottom right, #a855f7, #6366f1);
   border-radius: 9999px;
   flex-shrink: 0;
-  transition: transform 0.3s ease;
   background-image: url(${Image4});
   background-size: cover;
   background-position: center;
-  
-  ${ProfileButton}:hover & {
-    transform: rotate(10deg);
-  }
 `;
 
 const ProfileInfo = styled.div`
   color: black;
   padding-right: 0.75rem;
-  transition: transform 0.2s ease;
-  
-  ${ProfileButton}:hover & {
-    transform: translateX(2px);
-  }
 `;
 
 const ProfileName = styled.div`
   font-weight: bold;
-`;
-
-const ProfileRole = styled.div`
-  font-size: 0.875rem;
-  color: #6b7280;
 `;
 
 function Home() {
@@ -407,11 +378,10 @@ function Home() {
           </ImageSection>
         </Grid>
 
-        <ProfileButton href="https://x.com/Matteox0x0" target="_blank" rel="noopener noreferrer">
+        <ProfileButton>
           <ProfileImage />
           <ProfileInfo>
-            <ProfileName>matteo.lab</ProfileName>
-            <ProfileRole>Founder</ProfileRole>
+            <ProfileName>Created By Matteo</ProfileName>
           </ProfileInfo>
         </ProfileButton>
       </MainContainer>
